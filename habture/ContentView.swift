@@ -15,7 +15,7 @@ struct ContentView: View {
                 Spacer()
                 switch viewRouter.currentPage {
                 case .categorias:
-                    Text("CATEGORIAS")
+                    categories()
                 case .conquistas:
                     Text("CONQUISTAS")
                 case .ajustes:
