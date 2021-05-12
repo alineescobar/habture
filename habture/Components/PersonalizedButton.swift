@@ -29,7 +29,7 @@ struct PersonalizedButton: View {
                     Text(text)
                         .font(.system(size: 17, design: .rounded))
                         .fontWeight(.bold)
-                        .foregroundColor(Color("white1"))
+                        .foregroundColor(Color("BackgroundColor"))
                         .padding()
                 )
                 .offset(y: -5)
@@ -39,6 +39,6 @@ struct PersonalizedButton: View {
 
 struct PersonalizedButton_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalizedButton(text: "Continuar", height: 60, bgColor: Color("purple1"), shadowColor: Color("purple2"))
+        PersonalizedButton(text: "Continuar", height: 60, bgColor: Color("Purple2"), shadowColor: Color("Purple3"))
     }
 }

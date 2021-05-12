@@ -16,7 +16,7 @@ struct ModalCongragulations: View {
                 Rectangle()
                     .frame(maxWidth: .infinity, maxHeight: 360, alignment: .center)
                     .padding(36)
-                    .background(Color("orange1"))
+                    .background(Color("Orange1"))
                     .cornerRadius(22)
                     .offset(y: 5)
                 
@@ -26,7 +26,7 @@ struct ModalCongragulations: View {
                             Image(systemName: "xmark.circle")
                                 .resizable()
                                 .frame(width: 30, height: 30, alignment: .center)
-                                .foregroundColor(Color("purple1"))
+                                .foregroundColor(Color("Purple2"))
                         })
                         Spacer()
                     }
@@ -35,7 +35,7 @@ struct ModalCongragulations: View {
                     Text("Parabéns")
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(Color("purple1"))
+                        .foregroundColor(Color("Purple2"))
                     
                     Text("Você recolheu todos os \nobjetos!")
                         .font(.system(size: 17, design: .rounded))
@@ -72,14 +72,14 @@ struct ModalCongragulations: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: 360, alignment: .center)
                 .padding(36)
-                .background(Color("yellow1"))
+                .background(Color("Yellow"))
                 .cornerRadius(22)
                 
                 GeometryReader { geometry in
                     Circle()
                         .position(x: geometry.size.width/2, y: geometry.size.height/2)
                         .frame(width: 80, height: 80, alignment: .center)
-                        .foregroundColor(Color("purple1"))
+                        .foregroundColor(Color("Purple2"))
                         .offset(y: -220)
                 }
                 .frame(maxWidth: .infinity, maxHeight: 360, alignment: .center)
@@ -90,14 +90,14 @@ struct ModalCongragulations: View {
                 .frame(height:34)
             
             Button(action: {}, label: {
-                PersonalizedButton(text: "Continuar", height: 42, bgColor: Color("purple1"), shadowColor: Color("purple2"))
+                PersonalizedButton(text: "Continuar", height: 42, bgColor: Color("Purple2"), shadowColor: Color("Purple3"))
             })
             
             Spacer()
                 .frame(height:14)
             
             Button(action: {}, label: {
-                PersonalizedButton(text: "Voltar", height: 42, bgColor: Color("purple2"), shadowColor: Color("purple1"))
+                PersonalizedButton(text: "Voltar", height: 42, bgColor: Color("Purple3"), shadowColor: Color("Purple2"))
             })
         }
         .padding(40)
