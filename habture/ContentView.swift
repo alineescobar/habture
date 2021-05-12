@@ -69,7 +69,7 @@ struct ContentView: View {
 
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height/9)
-                .background(Color("TabBarPurple"))
+                .background(Color("Purple2"))
                 .cornerRadius(28, corners: [.topLeft, .topRight])
             }
             .ignoresSafeArea()
@@ -102,19 +102,18 @@ struct TabBarIcon: View {
                 .resizable()
                 .frame(width: width, height: height)
                 .padding(.top, 10)
-                .foregroundColor(viewRouter.currentPage == assignedPage ? Color("TabBarWhite") : Color("TabBarWhiteFadded"))
+                .foregroundColor(viewRouter.currentPage == assignedPage ? Color("BackgroundColor") : Color("BackgroundColorFaded"))
             Text(tabName)
                 .font(.system(size: 10, design: .rounded))
                 .fontWeight(.semibold)
                 .frame(minWidth: 55)
-                .foregroundColor(viewRouter.currentPage == assignedPage ? Color("TabBarWhite") : Color("TabBarWhiteFadded"))
+                .foregroundColor(viewRouter.currentPage == assignedPage ? Color("BackgroundColor") : Color("BackgroundColorFaded"))
             Spacer()
         }
         .frame(maxWidth: .infinity )
         .onTapGesture {
             viewRouter.currentPage = assignedPage
         }
-        
     }
 }
 
