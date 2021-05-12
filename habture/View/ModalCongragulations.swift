@@ -14,7 +14,7 @@ struct ModalCongragulations: View {
             ZStack {
                 
                 Rectangle()
-                    .frame(maxWidth: .infinity, maxHeight: 360, alignment: .center)
+                    .frame(maxWidth: .infinity, maxHeight: 375, alignment: .center)
                     .padding(36)
                     .background(Color("Orange1"))
                     .cornerRadius(22)
@@ -30,8 +30,8 @@ struct ModalCongragulations: View {
                         })
                         Spacer()
                     }
-                    .padding(-22)
-                    
+                    .padding(EdgeInsets(top: -22, leading: -28, bottom: -22, trailing: -22))
+
                     Text("Parabéns")
                         .font(.title)
                         .fontWeight(.bold)
@@ -64,13 +64,15 @@ struct ModalCongragulations: View {
                         .fontWeight(.regular)
                         .padding(.top)
                     
-                    Link("psdovidro", destination: URL(fileURLWithPath: "https://www.psdovidro.com.br/descubra-tudo-sobre-a-reciclagem-de-vidro/"))
-                        .foregroundColor(.black)
+                    
+                    Link("https://www.psdovidro.com.br/descubra-tudo-sobre-a-reciclagem-de-vidro/", destination: URL(fileURLWithPath: "https://www.psdovidro.com.br/descubra-tudo-sobre-a-reciclagem-de-vidro/"))
+                        .foregroundColor(Color("Purple2"))
                         .font(.system(size: 10, design: .rounded))
                         .multilineTextAlignment(.center)
-                    
+                        .frame(width: .infinity, height: 25)
+
                 }
-                .frame(maxWidth: .infinity, maxHeight: 360, alignment: .center)
+                .frame(maxWidth: .infinity, maxHeight: 375, alignment: .center)
                 .padding(36)
                 .background(Color("Yellow"))
                 .cornerRadius(22)
@@ -80,7 +82,7 @@ struct ModalCongragulations: View {
                         .position(x: geometry.size.width/2, y: geometry.size.height/2)
                         .frame(width: 80, height: 80, alignment: .center)
                         .foregroundColor(Color("Purple2"))
-                        .offset(y: -220)
+                        .offset(y: -230)
                 }
                 .frame(maxWidth: .infinity, maxHeight: 360, alignment: .center)
                 
