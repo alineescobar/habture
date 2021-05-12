@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07DD78962649C81D00B33E9E /* categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD78952649C81D00B33E9E /* categories.swift */; };
-		07DD7898264B21DA00B33E9E /* progressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD7897264B21DA00B33E9E /* progressBar.swift */; };
+		07DD7898264B21DA00B33E9E /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD7897264B21DA00B33E9E /* ProgressBar.swift */; };
 		1651A33226446E2E002888DD /* habtureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651A33126446E2E002888DD /* habtureApp.swift */; };
 		1651A33426446E2E002888DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651A33326446E2E002888DD /* ContentView.swift */; };
 		1651A33626446E2F002888DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1651A33526446E2F002888DD /* Assets.xcassets */; };
@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		07DD78952649C81D00B33E9E /* categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categories.swift; sourceTree = "<group>"; };
-		07DD7897264B21DA00B33E9E /* progressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressBar.swift; sourceTree = "<group>"; };
+		07DD7897264B21DA00B33E9E /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		1651A32E26446E2E002888DD /* habture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = habture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1651A33126446E2E002888DD /* habtureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habtureApp.swift; sourceTree = "<group>"; };
 		1651A33326446E2E002888DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 				1651A33A26446E2F002888DD /* Info.plist */,
 				1651A33726446E2F002888DD /* Preview Content */,
 				07DD78952649C81D00B33E9E /* categories.swift */,
-				07DD7897264B21DA00B33E9E /* progressBar.swift */,
+				07DD7897264B21DA00B33E9E /* ProgressBar.swift */,
 			);
 			path = habture;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 			files = (
 				1651A33426446E2E002888DD /* ContentView.swift in Sources */,
 				1651A33226446E2E002888DD /* habtureApp.swift in Sources */,
-				07DD7898264B21DA00B33E9E /* progressBar.swift in Sources */,
+				07DD7898264B21DA00B33E9E /* ProgressBar.swift in Sources */,
 				07DD78962649C81D00B33E9E /* categories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
