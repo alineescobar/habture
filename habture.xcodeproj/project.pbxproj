@@ -13,6 +13,9 @@
 		1651A33426446E2E002888DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651A33326446E2E002888DD /* ContentView.swift */; };
 		1651A33626446E2F002888DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1651A33526446E2F002888DD /* Assets.xcassets */; };
 		1651A33926446E2F002888DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1651A33826446E2F002888DD /* Preview Assets.xcassets */; };
+		165CCC43264B2D0500FBD39B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165CCC42264B2D0500FBD39B /* ViewRouter.swift */; };
+		C09BB2CE264C5F1B00D0BDCF /* ModalCongragulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BB2CB264C5F1B00D0BDCF /* ModalCongragulations.swift */; };
+		C09BB2CF264C5F1B00D0BDCF /* PersonalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		1651A33526446E2F002888DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1651A33826446E2F002888DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1651A33A26446E2F002888DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		165CCC42264B2D0500FBD39B /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		C09BB2CB264C5F1B00D0BDCF /* ModalCongragulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalCongragulations.swift; sourceTree = "<group>"; };
+		C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalizedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		1651A33026446E2E002888DD /* habture */ = {
 			isa = PBXGroup;
 			children = (
+				C09BB2CC264C5F1B00D0BDCF /* Components */,
+				C09BB2CA264C5F1B00D0BDCF /* View */,
 				1651A33126446E2E002888DD /* habtureApp.swift */,
 				1651A33326446E2E002888DD /* ContentView.swift */,
 				1651A33526446E2F002888DD /* Assets.xcassets */,
@@ -63,6 +71,7 @@
 				1651A33726446E2F002888DD /* Preview Content */,
 				07DD78952649C81D00B33E9E /* categories.swift */,
 				07DD7897264B21DA00B33E9E /* ProgressBar.swift */,
+				165CCC42264B2D0500FBD39B /* ViewRouter.swift */,
 			);
 			path = habture;
 			sourceTree = "<group>";
@@ -73,6 +82,22 @@
 				1651A33826446E2F002888DD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C09BB2CA264C5F1B00D0BDCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C09BB2CB264C5F1B00D0BDCF /* ModalCongragulations.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C09BB2CC264C5F1B00D0BDCF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09BB2CE264C5F1B00D0BDCF /* ModalCongragulations.swift in Sources */,
+				C09BB2CF264C5F1B00D0BDCF /* PersonalizedButton.swift in Sources */,
 				1651A33426446E2E002888DD /* ContentView.swift in Sources */,
 				1651A33226446E2E002888DD /* habtureApp.swift in Sources */,
 				07DD7898264B21DA00B33E9E /* ProgressBar.swift in Sources */,
 				07DD78962649C81D00B33E9E /* categories.swift in Sources */,
+				165CCC43264B2D0500FBD39B /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +305,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"habture/Preview Content\"";
+				DEVELOPMENT_TEAM = 8G4UL7Z7AB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = habture/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -298,6 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"habture/Preview Content\"";
+				DEVELOPMENT_TEAM = 8G4UL7Z7AB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = habture/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
