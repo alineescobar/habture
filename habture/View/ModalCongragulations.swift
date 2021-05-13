@@ -12,7 +12,7 @@ struct ModalCongragulations: View {
         VStack {
             
             ZStack {
-                
+
                 Rectangle()
                     .frame(maxWidth: .infinity, maxHeight: 375, alignment: .center)
                     .padding(36)
