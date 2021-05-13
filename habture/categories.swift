@@ -15,14 +15,14 @@ struct categories: View {
             Text("Selecione uma \n     categoria")
                 .fontWeight(.semibold)
                 .font(.system(size: 28, design: .rounded))
-                .foregroundColor(Color("A1"))
+                .foregroundColor(Color("Purple1"))
                 .padding(40)
             Spacer()
             Button(action: {
                 //self.x = true
             }) {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .fill(Color("A1"))
+                    .fill(Color("Purple1"))
                     .frame(width: 339, height: 102)
                     .overlay(
                         Text("Destino do lixo")
@@ -42,7 +42,7 @@ struct categories: View {
                     .cornerRadius(50)
                     .overlay(
                         RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .fill(Color("A2"))
+                            .fill(Color("Yellow"))
                             .frame(width: 339, height: 102)
                     )
                     .font(Font.custom("SF Pro Rounded", size: 40))
@@ -58,7 +58,7 @@ struct categories: View {
                     .cornerRadius(50)
                     .overlay(
                         RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .fill(Color("A3"))
+                            .fill(Color("Blue"))
                             .frame(width: 339, height: 102)
                     )
                     .font(Font.custom("SF Pro Rounded", size: 40))
@@ -74,7 +74,7 @@ struct categories: View {
                     .cornerRadius(50)
                     .overlay(
                         RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .fill(Color("A4"))
+                            .fill(Color("Pink"))
                             .frame(width: 339, height: 102)
                     )
                     .font(Font.custom("SF Pro Rounded", size: 40))
