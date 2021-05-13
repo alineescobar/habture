@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07DD78962649C81D00B33E9E /* categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD78952649C81D00B33E9E /* categories.swift */; };
+		1613DE89264C98AC00D9BDE4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613DE88264C98AC00D9BDE4 /* Constants.swift */; };
 		1651A33226446E2E002888DD /* habtureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651A33126446E2E002888DD /* habtureApp.swift */; };
 		1651A33426446E2E002888DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651A33326446E2E002888DD /* ContentView.swift */; };
 		1651A33626446E2F002888DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1651A33526446E2F002888DD /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		07DD78952649C81D00B33E9E /* categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categories.swift; sourceTree = "<group>"; };
+		1613DE88264C98AC00D9BDE4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1651A32E26446E2E002888DD /* habture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = habture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1651A33126446E2E002888DD /* habtureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habtureApp.swift; sourceTree = "<group>"; };
 		1651A33326446E2E002888DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				1651A33726446E2F002888DD /* Preview Content */,
 				07DD78952649C81D00B33E9E /* categories.swift */,
 				165CCC42264B2D0500FBD39B /* ViewRouter.swift */,
+				1613DE88264C98AC00D9BDE4 /* Constants.swift */,
 			);
 			path = habture;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				C09BB2CF264C5F1B00D0BDCF /* PersonalizedButton.swift in Sources */,
 				1651A33426446E2E002888DD /* ContentView.swift in Sources */,
 				1651A33226446E2E002888DD /* habtureApp.swift in Sources */,
+				1613DE89264C98AC00D9BDE4 /* Constants.swift in Sources */,
 				07DD78962649C81D00B33E9E /* categories.swift in Sources */,
 				165CCC43264B2D0500FBD39B /* ViewRouter.swift in Sources */,
 			);
