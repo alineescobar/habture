@@ -192,6 +192,7 @@
 			files = (
 				C09BB2CE264C5F1B00D0BDCF /* ModalCongragulations.swift in Sources */,
 				C0E7A0D3264DFBBB008A070C /* Awards.swift in Sources */,
+				16249FF4264ED8F900AEFCB4 /* ButtonStyles.swift in Sources */,
 				C09BB2CF264C5F1B00D0BDCF /* PersonalizedButton.swift in Sources */,
 				C0867623264C6FF200EEE193 /* Game.swift in Sources */,
 				1651A33426446E2E002888DD /* ContentView.swift in Sources */,
