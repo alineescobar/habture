@@ -27,7 +27,7 @@ struct categories: View {
             ScrollView(showsIndicators: false) {
                 
                 Button(action: {
-                    //self.x = true
+                    play.toggle()
                 }) {
                     RoundedRectangle(cornerRadius: 24, style: .continuous)
                         .fill(Color("Purple1"))
@@ -39,6 +39,7 @@ struct categories: View {
                                 .foregroundColor(.white)
                         )
                 }
+                .fullScreenCover(isPresented: $play, content: Game.init)
                 Spacer()
                     .frame(height: 14)
                 Button(action: {
