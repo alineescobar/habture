@@ -11,6 +11,7 @@ struct Question: View {
     var questao: Pergunta
     
     @State var pressed: String = ""
+    static var escolhida: String = ""
     
     var body: some View {
         VStack {
@@ -24,7 +25,7 @@ struct Question: View {
             ForEach(questao.alternativas, id: \.self) { alternativa in
                 Button(""){
                     pressed = alternativa
-
+                    Question.escolhida = pressed
                 }.buttonStyle(AlternativeButton(isSelected: $pressed, text: alternativa, bgColor: Color("Orange1"), shadowColor: Color("Orange2")))
                 .padding(.bottom, 9)
             }
