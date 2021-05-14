@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "CenarioPraia.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "CenarioPraia.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
