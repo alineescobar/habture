@@ -10,26 +10,48 @@ import SwiftUI
 struct Trash: View {
     @State var xPos1: CGFloat
     @State var yPos1: CGFloat
-    @Binding var message: String
-    let garbageX: CGFloat
-    let garbageY: CGFloat
-    @Binding var count: Int
     @State var collision: Bool = false
+    @Binding var message: String
+    @Binding var count: Int
+    let plasticX: CGFloat
+    let plasticY: CGFloat
+    let glassX: CGFloat
+    let glassY: CGFloat
+    let metalX: CGFloat
+    let metalY: CGFloat
+    let organicX: CGFloat
+    let organicY: CGFloat
+    let type: String
+    let angle: Double
     
-    init(x:CGFloat, y:CGFloat, garbageX:CGFloat, garbageY:CGFloat, count: Binding<Int>, message: Binding<String>) {
+    private var initialPosX: CGFloat
+    private var initialPosY: CGFloat
+    
+    init(x:CGFloat, y:CGFloat, plasticX:CGFloat, plasticY:CGFloat, glassX:CGFloat, glassY:CGFloat, metalX:CGFloat, metalY:CGFloat, organicX:CGFloat, organicY:CGFloat, message: Binding<String>, type: String, count: Binding<Int>, angle: Double) {
         self.xPos1 = x
         self.yPos1 = y
-        self.garbageX = garbageX
-        self.garbageY = garbageY
-        self._count = count
+        self.plasticX = plasticX
+        self.plasticY = plasticY
+        self.glassX = glassX
+        self.glassY = glassY
+        self.metalX = metalX
+        self.metalY = metalY
+        self.organicX = organicX
+        self.organicY = organicY
         self._message = message
+        self.type = type
+        self.initialPosX = x
+        self.initialPosY = y
+        self._count = count
+        self.angle = angle
     }
     
     var body: some View {
-        Circle()
-            .fill(Color.blue)
-            .frame(width: 50, height: 50)
+        Image(self.type)
+            .rotationEffect(Angle(degrees: self.angle))
+            .frame(width: 35, height: 35)
             .position(x: self.xPos1, y: self.yPos1)
+            .isHidden(self.collision)
             .gesture(
             DragGesture()
                 .onChanged({value in
@@ -39,20 +61,68 @@ struct Trash: View {
                 })
                 .onEnded({_ in
                     self.checkCollision()
-                    if self.collision{
-                        self.count += 1
-                    }
                 })
             )
     }
     
     func checkCollision (){
         
-        if abs(self.garbageX - self.xPos1) < 30 && abs(self.garbageY - self.yPos1) < 30{
-            self.message = "Isso mesmo!"
-            self.collision = true
-        }else{
-            self.collision = false
+        if abs(self.plasticX - self.xPos1) < 50 && abs(self.plasticY - self.yPos1) < 50{
+            if self.type == "plastic"{
+                self.message = "Isso mesmo!"
+                self.count += 1
+                self.collision = true
+            }else{
+                self.message = "Errou!"
+                self.xPos1 = initialPosX
+                self.yPos1 = initialPosY
+                self.collision = false
+            }
+        }else if abs(self.glassX - self.xPos1) < 50 && abs(self.glassY - self.yPos1) < 50{
+            if self.type == "glass"{
+                self.message = "Isso mesmo!"
+                self.count += 1
+                self.collision = true
+            }else{
+                self.message = "Errou!"
+                self.xPos1 = initialPosX
+                self.yPos1 = initialPosY
+                self.collision = false
+            }
+        }else if abs(self.metalX - self.xPos1) < 50 && abs(self.metalY - self.yPos1) < 50{
+            if self.type == "metal"{
+                self.message = "Isso mesmo!"
+                self.count += 1
+                self.collision = true
+            }else{
+                self.message = "Errou!"
+                self.xPos1 = initialPosX
+                self.yPos1 = initialPosY
+                self.collision = false
+            }
+        }else if abs(self.organicX - self.xPos1) < 50 && abs(self.organicY - self.yPos1) < 50{
+            if self.type == "organic"{
+                self.message = "Isso mesmo!"
+                self.count += 1
+                self.collision = true
+            }else{
+                self.message = "Errou!"
+                self.xPos1 = initialPosX
+                self.yPos1 = initialPosY
+                self.collision = false
+            }
+        }
+}
+}
+
+extension View {
+    @ViewBuilder func isHidden(_ hidden: Bool, remove: Bool = false) -> some View {
+        if hidden {
+            if !remove {
+                self.hidden()
+            }
+        } else {
+            self
         }
     }
 }
