@@ -8,15 +8,11 @@
 import SwiftUI
 
 struct Question: View {
-    let questao: Pergunta
+    var questao: Pergunta
     
-    @State var pressed1: Bool = false
-    @State var pressed2: Bool = false
-    @State var pressed3: Bool = false
-    @State var pressed4: Bool = false
+    @State var pressed: String = ""
     
     var body: some View {
-        
         VStack {
             Text(questao.textoQuestao)
                 .font(.system(size: 22, design: .rounded))
@@ -26,11 +22,10 @@ struct Question: View {
                 .frame(height: 48)
             
             ForEach(questao.alternativas, id: \.self) { alternativa in
-                PersonalizedButton(text: alternativa, height: 42, bgColor: pressed1 ? Color("Orange2") : Color("Orange1"), shadowColor: pressed1 ? Color("Orange1") : Color("Orange2"))
-                    .onTapGesture {
-                        pressed1.toggle()
-                    }
-                    .padding(.bottom, 9)
+                Button(""){
+                    
+                }.buttonStyle(AlternativeButton(isSelected: $pressed, text: alternativa, bgColor: Color("Orange1"), shadowColor: Color("Orange2")))
+                .padding(.bottom, 9)
             }
         }
     }

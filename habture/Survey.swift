@@ -11,6 +11,7 @@ struct Survey: View {
     @State private var progess: Int = 45
     @State var atLeastOneSelected: Bool = true
     
+    
     var body: some View {
         VStack{
             Text("Questionário")
@@ -65,17 +66,15 @@ struct Survey: View {
                     .frame(maxWidth: 300)
             }
             
-            
-            PersonalizedButton(text: progess == 180 ? "Finalizar" : "Continuar", height: 42, bgColor: Color("Purple2"), shadowColor: Color("Purple3"))
-                .onTapGesture {
-                    if (atLeastOneSelected){
-                        if self.progess < 180 {
-                            self.progess += 45
-                        }
+            Button(""){
+                if (atLeastOneSelected){
+                    if self.progess < 180 {
+                        self.progess += 45
                     }
                 }
-                .frame(maxWidth: 300)
-                .padding(.top, 64)
+            }.buttonStyle(CommonUseButton(text: progess == 180 ? "Finalizar" : "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
+            .frame(maxWidth: 300)
+            .padding(.top, 64)
             Spacer()
         }
     }

@@ -12,11 +12,12 @@ struct categories: View {
     var body: some View {
         VStack{
             Spacer()
-            Text("Selecione uma \n     categoria")
+            Text("Selecione uma categoria")
                 .fontWeight(.semibold)
                 .font(.system(size: 28, design: .rounded))
                 .foregroundColor(Color("Purple1"))
-                .padding(40)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 40)
             Spacer()
             Button(action: {
                 //self.x = true

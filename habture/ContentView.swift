@@ -11,7 +11,7 @@ struct ContentView: View {
     @StateObject var viewRouter: ViewRouter
     var body: some View{
         GeometryReader { geometry in
-            VStack {
+            ZStack {
                 Spacer()
                 switch viewRouter.currentPage {
                 case .categorias:
@@ -23,54 +23,56 @@ struct ContentView: View {
                 case .perfil:
                     Text("PERFIL")
                 }
-                Spacer()
-                HStack(alignment: .lastTextBaseline){
-                    HStack{
-                        TabBarIcon(
-                            viewRouter: viewRouter,
-                            assignedPage: Page.categorias,
-                            width: 28,
-                            height: 28,
-                            iconName: "camera.filters",
-                            tabName: "Categorias"
-                        )
-                        .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 13))
+                VStack{
+                    Spacer()
+                    HStack(alignment: .lastTextBaseline){
+                        HStack{
+                            TabBarIcon(
+                                viewRouter: viewRouter,
+                                assignedPage: Page.categorias,
+                                width: 28,
+                                height: 28,
+                                iconName: "camera.filters",
+                                tabName: "Categorias"
+                            )
+                            .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 13))
+                            
+                            TabBarIcon(
+                                viewRouter: viewRouter,
+                                assignedPage: Page.conquistas,
+                                width: 20,
+                                height: 28,
+                                iconName: "rosette",
+                                tabName: "Conquistas"
+                            )
+                            .padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
+                            
+                            TabBarIcon(
+                                viewRouter: viewRouter,
+                                assignedPage: Page.ajustes,
+                                width: 28,
+                                height: 28,
+                                iconName: "gearshape",
+                                tabName: "Ajustes"
+                            )
+                            .padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
+                            
+                            TabBarIcon(
+                                viewRouter: viewRouter,
+                                assignedPage: Page.perfil,
+                                width: 28,
+                                height: 28,
+                                iconName: "person",
+                                tabName: "Perfil"
+                            )
+                            .padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 30))
+                        }
                         
-                        TabBarIcon(
-                            viewRouter: viewRouter,
-                            assignedPage: Page.conquistas,
-                            width: 20,
-                            height: 28,
-                            iconName: "rosette",
-                            tabName: "Conquistas"
-                        )
-                        .padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
-
-                        TabBarIcon(
-                            viewRouter: viewRouter,
-                            assignedPage: Page.ajustes,
-                            width: 28,
-                            height: 28,
-                            iconName: "gearshape",
-                            tabName: "Ajustes"
-                        )
-                        .padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
-
-                        TabBarIcon(
-                            viewRouter: viewRouter,
-                            assignedPage: Page.perfil,
-                            width: 28,
-                            height: 28,
-                            iconName: "person",
-                            tabName: "Perfil"
-                        )
-                        .padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 30))
                     }
-
+                    .frame(width: geometry.size.width, height: geometry.size.height/10)
+                    .background(Color("Purple2"))
+                    .cornerRadius(28, corners: [.topLeft, .topRight])
                 }
-                .frame(width: geometry.size.width, height: geometry.size.height/9)
-                .background(Color("Purple2"))
-                .cornerRadius(28, corners: [.topLeft, .topRight])
             }
             .ignoresSafeArea()
         }
@@ -120,7 +122,7 @@ struct TabBarIcon: View {
 struct RoundedCorner: Shape {
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners
-
+    
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         return Path(path.cgPath)
