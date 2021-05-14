@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Survey: View {
     @State private var progess: Int = 45
-    @State var atLeastOneSelected: Bool = false
+    @State var atLeastOneSelected: Bool = true
     
     var body: some View {
         VStack{
@@ -68,8 +68,10 @@ struct Survey: View {
             
             PersonalizedButton(text: progess == 180 ? "Finalizar" : "Continuar", height: 42, bgColor: Color("Purple2"), shadowColor: Color("Purple3"))
                 .onTapGesture {
-                    if self.progess < 180 {
-                        self.progess += 45
+                    if (atLeastOneSelected){
+                        if self.progess < 180 {
+                            self.progess += 45
+                        }
                     }
                 }
                 .frame(maxWidth: 300)
