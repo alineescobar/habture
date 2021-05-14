@@ -22,6 +22,7 @@
 		C0867623264C6FF200EEE193 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0867622264C6FF200EEE193 /* Game.swift */; };
 		C09BB2CE264C5F1B00D0BDCF /* ModalCongragulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BB2CB264C5F1B00D0BDCF /* ModalCongragulations.swift */; };
 		C09BB2CF264C5F1B00D0BDCF /* PersonalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */; };
+		C0E7A0D3264DFBBB008A070C /* Awards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E7A0D2264DFBBB008A070C /* Awards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C0867622264C6FF200EEE193 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		C09BB2CB264C5F1B00D0BDCF /* ModalCongragulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalCongragulations.swift; sourceTree = "<group>"; };
 		C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalizedButton.swift; sourceTree = "<group>"; };
+		C0E7A0D2264DFBBB008A070C /* Awards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Awards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				C09BB2CB264C5F1B00D0BDCF /* ModalCongragulations.swift */,
 				C0867622264C6FF200EEE193 /* Game.swift */,
+				C0E7A0D2264DFBBB008A070C /* Awards.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C09BB2CE264C5F1B00D0BDCF /* ModalCongragulations.swift in Sources */,
+				C0E7A0D3264DFBBB008A070C /* Awards.swift in Sources */,
 				16249FF4264ED8F900AEFCB4 /* ButtonStyles.swift in Sources */,
 				C09BB2CF264C5F1B00D0BDCF /* PersonalizedButton.swift in Sources */,
 				C0867623264C6FF200EEE193 /* Game.swift in Sources */,
