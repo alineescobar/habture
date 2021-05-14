@@ -23,7 +23,8 @@ struct Question: View {
             
             ForEach(questao.alternativas, id: \.self) { alternativa in
                 Button(""){
-                    
+                    pressed = alternativa
+
                 }.buttonStyle(AlternativeButton(isSelected: $pressed, text: alternativa, bgColor: Color("Orange1"), shadowColor: Color("Orange2")))
                 .padding(.bottom, 9)
             }

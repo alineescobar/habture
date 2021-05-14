@@ -11,7 +11,8 @@ import SwiftUI
 struct habtureApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewRouter: ViewRouter())
+//            ContentView(viewRouter: ViewRouter())
+            Survey()
         }
     }
 }
