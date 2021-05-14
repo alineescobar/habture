@@ -12,7 +12,6 @@ struct categories: View {
     
     var body: some View {
             VStack{
-                Spacer()
                 Text("Selecione uma \n     categoria")
                     .fontWeight(.semibold)
                     .font(.system(size: 28, design: .rounded))

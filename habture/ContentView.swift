@@ -17,7 +17,7 @@ struct ContentView: View {
                 case .categorias:
                     categories()
                 case .conquistas:
-                    Text("CONQUISTAS")
+                    Awards()
                 case .ajustes:
                     Text("AJUSTES")
                 case .perfil:
