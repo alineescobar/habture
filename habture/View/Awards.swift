@@ -11,7 +11,7 @@ struct Awards: View {
     var body: some View {
         VStack {
             Spacer()
-                .frame(height: 40)
+                .frame(height: 111)
             Text("Conquistas")
                 .fontWeight(.semibold)
                 .font(.system(size: 28, design: .rounded))
