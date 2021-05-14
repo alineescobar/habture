@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct progressBar: View {
-    
     @State private var progess = 0
     @State private var currentProgress = 0
     
@@ -19,21 +18,20 @@ struct progressBar: View {
                     //print("Edit button was tapped")
                 }) {
                     Image(systemName: "xmark.circle")
-                        .foregroundColor(.black)
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color("Purple2"))
                 }
                 ZStack(alignment:.leading){
                     Rectangle()
-                        .foregroundColor(Color(.black))
+                        .foregroundColor(Color("Gray"))
                         .frame(width: 180, height: 9)
                         .cornerRadius(10)
-                    
-                    LinearGradient(gradient: Gradient(colors: [
-                        progess < 180 ? .orange : Color(.systemTeal),
-                        progess < 180 ? .pink : .blue
-                    ]),
-                    startPoint: .top, endPoint: .bottom)
-                    .frame(width: CGFloat(progess), height: 9)
-                    .cornerRadius(10)
+
+                    Rectangle()
+                        .foregroundColor(Color("Purple2"))
+                        .frame(width: CGFloat(progess), height: 9)
+                        .cornerRadius(10)
                 }
                 .frame(width: 272)
                 .onTapGesture { //aqui teria que mudar para as perguntas
