@@ -11,6 +11,7 @@
 		07DD7898264B21DA00B33E9E /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD7897264B21DA00B33E9E /* ProgressBar.swift */; };
 		1613DE89264C98AC00D9BDE4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613DE88264C98AC00D9BDE4 /* Constants.swift */; };
 		1613DE8B264D9D7A00D9BDE4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613DE8A264D9D7A00D9BDE4 /* Question.swift */; };
+		16350D33264EB83D00E2AA17 /* Pergunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16350D32264EB83D00E2AA17 /* Pergunta.swift */; };
 		163D092F264DADA0008DBFE2 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D092E264DADA0008DBFE2 /* Survey.swift */; };
 		1651A33226446E2E002888DD /* habtureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651A33126446E2E002888DD /* habtureApp.swift */; };
 		1651A33426446E2E002888DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651A33326446E2E002888DD /* ContentView.swift */; };
@@ -26,6 +27,7 @@
 		07DD7897264B21DA00B33E9E /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		1613DE88264C98AC00D9BDE4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1613DE8A264D9D7A00D9BDE4 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		16350D32264EB83D00E2AA17 /* Pergunta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pergunta.swift; sourceTree = "<group>"; };
 		163D092E264DADA0008DBFE2 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		1651A32E26446E2E002888DD /* habture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = habture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1651A33126446E2E002888DD /* habtureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habtureApp.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				1651A33726446E2F002888DD /* Preview Content */,
 				07DD78952649C81D00B33E9E /* categories.swift */,
 				07DD7897264B21DA00B33E9E /* ProgressBar.swift */,
+				16350D32264EB83D00E2AA17 /* Pergunta.swift */,
 				165CCC42264B2D0500FBD39B /* ViewRouter.swift */,
 				1613DE88264C98AC00D9BDE4 /* Constants.swift */,
 			);
@@ -188,6 +191,7 @@
 				163D092F264DADA0008DBFE2 /* Survey.swift in Sources */,
 				1613DE8B264D9D7A00D9BDE4 /* Question.swift in Sources */,
 				165CCC43264B2D0500FBD39B /* ViewRouter.swift in Sources */,
+				16350D33264EB83D00E2AA17 /* Pergunta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

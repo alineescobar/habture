@@ -44,23 +44,23 @@ struct Survey: View {
             
             switch progess {
             case 45:
-                Question(questionText: QUESTAO_01, alternativas: ALTERNATIVAS_01)
+                Question(questao: perguntasQuestionario[0])
                     .padding(.top, 54)
                     .frame(maxWidth: 300)
             case 90:
-                Question(questionText: QUESTAO_02, alternativas: ALTERNATIVAS_02)
+                Question(questao: perguntasQuestionario[1])
                     .padding(.top, 54)
                     .frame(maxWidth: 300)
             case 135:
-                Question(questionText: QUESTAO_03, alternativas: ALTERNATIVAS_03)
+                Question(questao: perguntasQuestionario[2])
                     .padding(.top, 54)
                     .frame(maxWidth: 300)
             case 180:
-                Question(questionText: QUESTAO_04, alternativas: ALTERNATIVAS_04)
+                Question(questao: perguntasQuestionario[3])
                     .padding(.top, 54)
                     .frame(maxWidth: 300)
             default:
-                Question(questionText: QUESTAO_01, alternativas: ALTERNATIVAS_01)
+                Question(questao: perguntasQuestionario[0])
                     .padding(.top, 54)
                     .frame(maxWidth: 300)
             }

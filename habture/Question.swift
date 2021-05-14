@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct Question: View {
-    let questionText: String
-    let alternativas: [String]
+    let questao: Pergunta
     
     @State var pressed1: Bool = false
     @State var pressed2: Bool = false
@@ -19,14 +18,14 @@ struct Question: View {
     var body: some View {
         
         VStack {
-            Text(questionText)
+            Text(questao.textoQuestao)
                 .font(.system(size: 22, design: .rounded))
                 .multilineTextAlignment(.center)
                 .frame(width: 260)
             Spacer()
                 .frame(height: 48)
             
-            ForEach(alternativas, id: \.self) { alternativa in
+            ForEach(questao.alternativas, id: \.self) { alternativa in
                 PersonalizedButton(text: alternativa, height: 42, bgColor: pressed1 ? Color("Orange2") : Color("Orange1"), shadowColor: pressed1 ? Color("Orange1") : Color("Orange2"))
                     .onTapGesture {
                         pressed1.toggle()
@@ -39,6 +38,6 @@ struct Question: View {
 
 struct Quiz_Previews: PreviewProvider {
     static var previews: some View {
-        Question(questionText: QUESTAO_01, alternativas: ALTERNATIVAS_01)
+        Question(questao: pergunta01)
     }
 }
