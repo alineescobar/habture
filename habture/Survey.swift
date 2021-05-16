@@ -10,7 +10,7 @@ import SwiftUI
 struct Survey: View {
     @State private var progess: Int = 45
     @State var escolhidaQuestao: String = ""
-    @State var qtdAcertos: Int = 0
+    @State var qtdAcertos: Int = 0  
     
     var body: some View {
         VStack{
@@ -68,38 +68,32 @@ struct Survey: View {
             
             Button(""){
                 escolhidaQuestao = Question.escolhida
-                
+
                 if (escolhidaQuestao != ""){
+                    if (progess == 45){
+                        if (escolhidaQuestao == perguntasQuestionario[0].alternativas[perguntasQuestionario[0].alternativaCorreta]) {
+                            qtdAcertos += 1
+                        }
+                    } else if (progess == 90) {
+                        if (escolhidaQuestao == perguntasQuestionario[1].alternativas[perguntasQuestionario[1].alternativaCorreta]) {
+                            qtdAcertos += 1
+                        }
+                    } else if (progess == 135) {
+                        if (escolhidaQuestao == perguntasQuestionario[2].alternativas[perguntasQuestionario[2].alternativaCorreta]) {
+                            qtdAcertos += 1
+                        }
+                    } else if (progess == 180) {
+                        if (escolhidaQuestao == perguntasQuestionario[3].alternativas[perguntasQuestionario[3].alternativaCorreta]) {
+                            qtdAcertos += 1
+                        }
+                    }
+                    
                     if self.progess < 180 {
                         self.progess += 45
                     }
                     
-                    switch progess {
-                    case 45:
-                        if (escolhidaQuestao == perguntasQuestionario[0].alternativas[perguntasQuestionario[0].alternativaCorreta]) {
-                            qtdAcertos += 1
-                        }
-                    case 90:
-                        if (escolhidaQuestao == perguntasQuestionario[1].alternativas[perguntasQuestionario[1].alternativaCorreta]) {
-                            qtdAcertos += 1
-                        }
-                    case 135:
-                        if (escolhidaQuestao == perguntasQuestionario[2].alternativas[perguntasQuestionario[2].alternativaCorreta]) {
-                            qtdAcertos += 1
-                        }
-                    case 180:
-                        if (escolhidaQuestao == perguntasQuestionario[3].alternativas[perguntasQuestionario[3].alternativaCorreta]) {
-                            qtdAcertos += 1
-                        }
-                    default:
-                        qtdAcertos += 0
-                    }
                 }
-                
-                print(escolhidaQuestao)
-                print(perguntasQuestionario[3].alternativas[perguntasQuestionario[3].alternativaCorreta])
-                print(qtdAcertos)
-                
+
             }.buttonStyle(CommonUseButton(text: progess == 180 ? "Finalizar" : "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .frame(maxWidth: 300)
             .padding(.top, 64)
