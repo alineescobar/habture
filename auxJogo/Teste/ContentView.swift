@@ -18,23 +18,24 @@ struct ContentView: View {
     @State var countAll: Int = 0
     
     var body: some View {
-        ZStack{
-            Text(self.message)
-                .position(CGPoint(x: 200, y: 100))
-            
-            Text(String(self.countAll))
-                .position(CGPoint(x: 200, y: 200))
-            
-            GenerateTrash(message: self.$message, countAll: self.$countAll)
-            
-            GenerateGarbages(plasticX: 70, plasticY: 600, glassX: 155, glassY: 600, metalX: 240, metalY: 600, organicX: 325, organicY: 600)
-            
+        GeometryReader { geometry in
+            ZStack{
+                Text(self.message)
+                    .position(CGPoint(x: 200, y: 100))
+                
+                Text(String(self.countAll))
+                    .position(CGPoint(x: 200, y: 200))
+                
+                GenerateTrash(plasticX: geometry.size.width*1.25/8, plasticY: geometry.size.height*4/5, glassX: geometry.size.width*3.125/8, glassY: geometry.size.height*4/5, metalX: geometry.size.width*4.875/8, metalY: geometry.size.height*4/5, organicX: geometry.size.width*6.75/8, organicY: geometry.size.height*4/5,message: self.$message, countAll: self.$countAll)
+                
+                GenerateGarbages(plasticX: geometry.size.width*1.25/8, plasticY: geometry.size.height*4/5, glassX: geometry.size.width*3.125/8, glassY: geometry.size.height*4/5, metalX: geometry.size.width*4.875/8, metalY: geometry.size.height*4/5, organicX: geometry.size.width*6.75/8, organicY: geometry.size.height*4/5)
+            }
         }
     }
     
     func isDone() {
         if self.countAll == 16 {
-//            modal
+            //            modal
         }
     }
 }

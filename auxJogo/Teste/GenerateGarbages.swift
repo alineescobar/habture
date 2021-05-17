@@ -30,9 +30,33 @@ struct GenerateGarbages: View {
         
     }
     var body: some View {
-        Garbage(x: self.plasticX, y: self.plasticY, type: "plastic")
-        Garbage(x: self.glassX, y: self.glassY, type: "glass")
-        Garbage(x: self.metalX, y: self.metalY, type: "metal")
-        Garbage(x: self.organicX, y: self.organicY, type: "organic")
+        ZStack{
+            Text("PLÁSTICO")
+                .font(.system(size: 15, design: .rounded))
+                .fontWeight(.bold)
+                .position(x:self.plasticX, y: self.plasticY+70)
+                Garbage(x: self.plasticX, y: self.plasticY, type: "plastic")
+        }
+        ZStack{
+            Text("VIDRO")
+                .font(.system(size: 15, design: .rounded))
+                .fontWeight(.bold)
+                .position(x:self.glassX, y: self.glassY+70)
+            Garbage(x: self.glassX, y: self.glassY, type: "glass")
+        }
+        ZStack{
+            Text("METAL")
+                .font(.system(size: 15, design: .rounded))
+                .fontWeight(.bold)
+                .position(x:self.metalX, y: self.metalY+70)
+            Garbage(x: self.metalX, y: self.metalY, type: "metal")
+        }
+        ZStack{
+            Text("ORGÂNICO")
+                .font(.system(size: 15, design: .rounded))
+                .fontWeight(.bold)
+                .position(x:self.organicX, y: self.organicY+70)
+            Garbage(x: self.organicX, y: self.organicY, type: "organic")
+        }
     }
 }
