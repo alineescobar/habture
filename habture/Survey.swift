@@ -89,12 +89,13 @@ struct Survey: View {
                     if self.progess < 180 {
                         self.progess += 45
                     } else if (progess == 180){
-                        openModal = true
+                        openModal.toggle()
                     }
                 }
             }.buttonStyle(CommonUseButton(text: progess == 180 ? "Finalizar" : "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .frame(maxWidth: 300)
             .padding(.top, 64)
+            .fullScreenCover(isPresented: $openModal, content: ModalQuizEnd.init)
             Spacer()
         }
     }
