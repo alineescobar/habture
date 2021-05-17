@@ -10,7 +10,8 @@ import SwiftUI
 struct Survey: View {
     @State private var progess: Int = 45
     @State var escolhidaQuestao: String = ""
-    @State var qtdAcertos: Int = 0  
+    @State var qtdAcertos: Int = 0
+    @State var openModal: Bool = false
     
     var body: some View {
         VStack{
@@ -18,7 +19,6 @@ struct Survey: View {
                 .font(.system(size: 22, design: .rounded))
                 .foregroundColor(Color("Purple2"))
                 .padding(.top, 30)
-            
             VStack{
                 HStack{
                     Button(action: {
@@ -68,7 +68,6 @@ struct Survey: View {
             
             Button(""){
                 escolhidaQuestao = Question.escolhida
-
                 if (escolhidaQuestao != ""){
                     if (progess == 45){
                         if (escolhidaQuestao == perguntasQuestionario[0].alternativas[perguntasQuestionario[0].alternativaCorreta]) {
@@ -87,13 +86,12 @@ struct Survey: View {
                             qtdAcertos += 1
                         }
                     }
-                    
                     if self.progess < 180 {
                         self.progess += 45
+                    } else if (progess == 180){
+                        openModal = true
                     }
-                    
                 }
-
             }.buttonStyle(CommonUseButton(text: progess == 180 ? "Finalizar" : "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .frame(maxWidth: 300)
             .padding(.top, 64)
