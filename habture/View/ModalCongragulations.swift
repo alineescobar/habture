@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ModalCongragulations: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State var abreQuestionario: Bool = false
+    
     var body: some View {
         VStack {
-            
             ZStack {
-
                 Rectangle()
                     .frame(maxWidth: .infinity, maxHeight: 375, alignment: .center)
                     .padding(36)
@@ -91,16 +92,13 @@ struct ModalCongragulations: View {
             Spacer()
                 .frame(height:34)
             
-            Button(action: {}, label: {
-                PersonalizedButton(text: "Continuar", height: 42, bgColor: Color("Purple2"), shadowColor: Color("Purple3"))
-            })
-            
+            Button(""){
+                abreQuestionario.toggle()
+            }.buttonStyle(CommonUseButton(text: "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
+            .padding()
+            .fullScreenCover(isPresented: $abreQuestionario, content: Survey.init)
             Spacer()
                 .frame(height:14)
-            
-            Button(action: {}, label: {
-                PersonalizedButton(text: "Voltar", height: 42, bgColor: Color("Purple3"), shadowColor: Color("Purple2"))
-            })
         }
         .padding(40)
     }

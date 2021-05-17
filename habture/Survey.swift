@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct Survey: View {
+    @Environment(\.presentationMode) var presentationMode
     @State private var progess: Int = 45
     @State var escolhidaQuestao: String = ""
     @State var qtdAcertos: Int = 0
     @State var openModal: Bool = false
+    @State var encerraQuesitonario: Bool = false
     
     var body: some View {
         VStack{
@@ -22,11 +24,14 @@ struct Survey: View {
             VStack{
                 HStack{
                     Button(action: {
+                        encerraQuesitonario.toggle()
                     }) {
                         Image(systemName: "xmark.circle")
                             .resizable()
                             .frame(width: 30, height: 30)
                             .foregroundColor(Color("Purple2"))
+                    }.fullScreenCover(isPresented: $encerraQuesitonario){
+                        ContentView(viewRouter: ViewRouter())
                     }
                     ZStack(alignment:.leading){
                         Rectangle()

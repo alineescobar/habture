@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ModalQuizEnd: View {
     @Environment(\.presentationMode) var presentationMode
-    @State var openNewScreen: Bool = false
+    @State var openScreen: Bool = false
     
     var body: some View {
         VStack {
@@ -53,18 +53,16 @@ struct ModalQuizEnd: View {
                         )
                 }
                 Button(""){
-                    openNewScreen.toggle()
+                    openScreen.toggle()
                     presentationMode.wrappedValue.dismiss()
-                }.buttonStyle(CommonUseButton(text: "Finalizar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
+                }
+                .buttonStyle(CommonUseButton(text: "Finalizar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
                 .padding(.top, 34)
-            }.padding(.horizontal, 40)
-            VStack{
-                if (openNewScreen) {
-                    Group {
-                        ContentView(viewRouter: ViewRouter())
-                    }
+                .fullScreenCover(isPresented: $openScreen){
+                    ContentView(viewRouter: ViewRouter())
                 }
             }
+            .padding(.horizontal, 40)
         }
     }
 }
