@@ -100,7 +100,26 @@ struct Survey: View {
             }.buttonStyle(CommonUseButton(text: progess == 180 ? "Finalizar" : "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .frame(maxWidth: 300)
             .padding(.top, 64)
-            .fullScreenCover(isPresented: $openModal, content: ModalQuizEnd.init)
+            .fullScreenCover(isPresented: $openModal){
+                PersonalizedModal(
+                    bgColor: Color("Yellow"),
+                    shadowColor: Color("Orange1"),
+                    circleColor: Color("Purple2"),
+                    circleStrokeColor: Color("Yellow"),
+                    buttonBgColor: Color("Purple2"),
+                    buttonShadowColor: Color("Purple3"),
+                    nomeImagem: "premio",
+                    titulo: "Bom trabalho!",
+                    textos: ["Os vidros não são biodegradáveis e permanecem na natureza por cerca de dez mil anos.", "Para cada tonelada de vidro reciclado, gasta-se menos 70% do que se gastaria para fabricar mais vidro;"],
+                    alturaMax: 500,
+                    temFonte: true,
+                    temCirculo: true,
+                    fonte: "https://www.psdovidro.com.br/descubra-tudo-sobre-a-reciclagem-de-vidro/",
+                    circleWithX: ContentView(viewRouter: ViewRouter()),
+                    buttonText: "Finalizar",
+                    buttonDestination: ContentView(viewRouter: ViewRouter())
+                )
+            }
             Spacer()
         }
     }

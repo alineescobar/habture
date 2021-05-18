@@ -18,6 +18,7 @@
 		1651A33426446E2E002888DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651A33326446E2E002888DD /* ContentView.swift */; };
 		1651A33626446E2F002888DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1651A33526446E2F002888DD /* Assets.xcassets */; };
 		1651A33926446E2F002888DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1651A33826446E2F002888DD /* Preview Assets.xcassets */; };
+		16527CD2265306CE00EA7D73 /* PersonalizedModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16527CD1265306CE00EA7D73 /* PersonalizedModal.swift */; };
 		165CCC43264B2D0500FBD39B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165CCC42264B2D0500FBD39B /* ViewRouter.swift */; };
 		16A961EE2652ACE100564722 /* ModalQuizEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A961ED2652ACE100564722 /* ModalQuizEnd.swift */; };
 		C0867623264C6FF200EEE193 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0867622264C6FF200EEE193 /* Game.swift */; };
@@ -40,6 +41,7 @@
 		1651A33526446E2F002888DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1651A33826446E2F002888DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1651A33A26446E2F002888DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16527CD1265306CE00EA7D73 /* PersonalizedModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizedModal.swift; sourceTree = "<group>"; };
 		165CCC42264B2D0500FBD39B /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		16A961ED2652ACE100564722 /* ModalQuizEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalQuizEnd.swift; sourceTree = "<group>"; };
 		C0867622264C6FF200EEE193 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */,
 				16249FF3264ED8F900AEFCB4 /* ButtonStyles.swift */,
+				16527CD1265306CE00EA7D73 /* PersonalizedModal.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				165CCC43264B2D0500FBD39B /* ViewRouter.swift in Sources */,
 				16A961EE2652ACE100564722 /* ModalQuizEnd.swift in Sources */,
 				16350D33264EB83D00E2AA17 /* Pergunta.swift in Sources */,
+				16527CD2265306CE00EA7D73 /* PersonalizedModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

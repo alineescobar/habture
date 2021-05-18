@@ -96,7 +96,9 @@ struct ModalCongragulations: View {
                 abreQuestionario.toggle()
             }.buttonStyle(CommonUseButton(text: "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .padding()
-            .fullScreenCover(isPresented: $abreQuestionario, content: Survey.init)
+            .fullScreenCover(isPresented: $abreQuestionario){
+                Survey()
+            }
             Spacer()
                 .frame(height:14)
         }
