@@ -39,41 +39,18 @@ struct Awards: View {
                                 )
                                 .offset(y: -90.0)
                             
-                            HStack {
-                                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                    .fill(Color.gray)
-                                    .frame(width: 70, height: 70)
-                                    .overlay(
-                                        Image(systemName: "rosette")
-                                            .font(.title)
-                                            .foregroundColor(.white)
-                                    )
-                                    .shadow(color: .black, radius: 5, x: 5, y: 5)
-                                    .padding(10)
-                                
-                                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                    .fill(Color.gray)
-                                    .frame(width: 70, height: 70)
-                                    .overlay(
-                                        Image(systemName: "rosette")
-                                            .font(.title)
-                                            .foregroundColor(.white)
-                                    )
-                                    .shadow(color: .black, radius: 5, x: 5, y: 5)
-                                    .padding(10)
-                                
-                                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                    .fill(Color.gray)
-                                    .frame(width: 70, height: 70)
-                                    .overlay(
-                                        Image(systemName: "rosette")
-                                            .font(.title)
-                                            .foregroundColor(.white)
-                                    )
-                                    .shadow(color: .black, radius: 5, x: 5, y: 5)
-                                    .padding(10)
-                                
+                            HStack(alignment: .bottom) {
+                                Image("plastico")
+                                Spacer()
+                                Image("vidro")
+                                Spacer()
+                                Image("premioDestinoLixo")
+                                Spacer()
+                                Image("organico")
+                                Spacer()
+                                Image("metal")
                             }
+                            .padding(.horizontal,28)
                         }
                     )
                     .padding(.horizontal,20)
@@ -96,6 +73,7 @@ struct Awards: View {
                                         .foregroundColor(Color("BackgroundColor"))
                                 )
                                 .offset(y: -90.0)
+                            Image("premioGenerico")
                         }
                     )
                     .padding(.horizontal,20)
@@ -118,6 +96,7 @@ struct Awards: View {
                                         .foregroundColor(Color("BackgroundColor"))
                                 )
                                 .offset(y: -90.0)
+                            Image("premioGenerico")
                         }
                     )
                     .padding(.horizontal,20)
@@ -140,6 +119,7 @@ struct Awards: View {
                                         .foregroundColor(Color("BackgroundColor"))
                                 )
                                 .offset(y: -90.0)
+                            Image("premioGenerico")
                         }
                     )
                     .padding(.horizontal,20)
