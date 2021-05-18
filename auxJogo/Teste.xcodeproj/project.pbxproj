@@ -17,6 +17,7 @@
 		29D26C22264D03B4003A130C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29D26C21264D03B4003A130C /* Preview Assets.xcassets */; };
 		29D26C2D264D03B4003A130C /* TesteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D26C2C264D03B4003A130C /* TesteTests.swift */; };
 		29D26C38264D03B4003A130C /* TesteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D26C37264D03B4003A130C /* TesteUITests.swift */; };
+		29DDB32A26544E6000672D3B /* ModalWrongGarbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDB32926544E6000672D3B /* ModalWrongGarbage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		29D26C33264D03B4003A130C /* TesteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TesteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D26C37264D03B4003A130C /* TesteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteUITests.swift; sourceTree = "<group>"; };
 		29D26C39264D03B4003A130C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29DDB32926544E6000672D3B /* ModalWrongGarbage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalWrongGarbage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				29686F21264DC8FB0033C28C /* Garbage.swift */,
 				29686F23264F06A50033C28C /* GenerateGarbages.swift */,
 				29686F25264F0CD10033C28C /* GenerateTrash.swift */,
+				29DDB32926544E6000672D3B /* ModalWrongGarbage.swift */,
 			);
 			path = Teste;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				29686F22264DC8FB0033C28C /* Garbage.swift in Sources */,
 				29686F1A264DA6040033C28C /* Trash.swift in Sources */,
 				29D26C1B264D03B1003A130C /* TesteApp.swift in Sources */,
+				29DDB32A26544E6000672D3B /* ModalWrongGarbage.swift in Sources */,
 				29686F24264F06A50033C28C /* GenerateGarbages.swift in Sources */,
 				29686F26264F0CD10033C28C /* GenerateTrash.swift in Sources */,
 			);

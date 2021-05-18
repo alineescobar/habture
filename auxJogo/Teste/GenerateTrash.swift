@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct GenerateTrash: View {
-    @Binding var message: String
     @Binding var countAll: Int
+    @Binding var wrongCollision: Bool
     let plasticX: CGFloat
     let plasticY: CGFloat
     let glassX: CGFloat
@@ -21,9 +21,9 @@ struct GenerateTrash: View {
     let screenHeight: CGFloat
     let screenWidth: CGFloat
     
-    init(plasticX: CGFloat, plasticY: CGFloat, glassX: CGFloat, glassY: CGFloat, metalX: CGFloat, metalY: CGFloat, organicX: CGFloat, organicY: CGFloat, message: Binding<String>, countAll: Binding<Int>){
-        self._message = message
+    init(plasticX: CGFloat, plasticY: CGFloat, glassX: CGFloat, glassY: CGFloat, metalX: CGFloat, metalY: CGFloat, organicX: CGFloat, organicY: CGFloat, countAll: Binding<Int>, wrongCollision: Binding<Bool>){
         self._countAll = countAll
+        self._wrongCollision = wrongCollision
         self.plasticX = plasticX
         self.plasticY = plasticY
         self.glassX = glassX
@@ -37,23 +37,23 @@ struct GenerateTrash: View {
     }
     
     var body: some View {
-        Trash(x: self.screenWidth*0.1*1, y: self.screenHeight*(0.5+((0.75-0.5)/2)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "metal", count: self.$countAll, angle: 37)
-        Trash(x: self.screenWidth*0.1*2, y: self.screenHeight*(0.5+((0.75-0.5)/3)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "glass", count: self.$countAll, angle: 45)
-        Trash(x: self.screenWidth*0.1*3, y: self.screenHeight*(0.5+((0.75-0.5)/4)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "organic", count: self.$countAll, angle: 12)
-        Trash(x: self.screenWidth*0.1*4, y: self.screenHeight*(0.5+((0.75-0.5)/5)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "plastic", count: self.$countAll, angle: 0)
+        Trash(x: self.screenWidth*0.1*1, y: self.screenHeight*(0.5+((0.75-0.5)/2)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "metal", count: self.$countAll, angle: 37, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*2, y: self.screenHeight*(0.5+((0.75-0.5)/3)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "glass", count: self.$countAll, angle: 45, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*3, y: self.screenHeight*(0.5+((0.75-0.5)/4)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "organic", count: self.$countAll, angle: 12, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*4, y: self.screenHeight*(0.5+((0.75-0.5)/5)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "plastic", count: self.$countAll, angle: 0, wrongCollision: self.$wrongCollision)
         
-        Trash(x: self.screenWidth*0.1*5, y: self.screenHeight*(0.5+((0.75-0.5)/2)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "glass", count: self.$countAll, angle: 89)
-        Trash(x: self.screenWidth*0.1*6, y: self.screenHeight*(0.5+((0.75-0.5)/3)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "organic", count: self.$countAll, angle: 134)
-        Trash(x: self.screenWidth*0.1*7, y: self.screenHeight*(0.5+((0.75-0.5)/4)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "plastic", count: self.$countAll, angle: 253)
-        Trash(x: self.screenWidth*0.1*8, y: self.screenHeight*(0.5+((0.75-0.5)/5)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "metal", count: self.$countAll, angle: 301)
+        Trash(x: self.screenWidth*0.1*5, y: self.screenHeight*(0.5+((0.75-0.5)/2)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "glass", count: self.$countAll, angle: 89, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*6, y: self.screenHeight*(0.5+((0.75-0.5)/3)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "organic", count: self.$countAll, angle: 134, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*7, y: self.screenHeight*(0.5+((0.75-0.5)/4)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "plastic", count: self.$countAll, angle: 253, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*8, y: self.screenHeight*(0.5+((0.75-0.5)/5)), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "metal", count: self.$countAll, angle: 301, wrongCollision: self.$wrongCollision)
         
-        GenerateTrash2(plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,message: self.$message, count: self.$countAll)
+        GenerateTrash2(plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, count: self.$countAll, wrongCollision: self.$wrongCollision)
     }
 }
 
 struct GenerateTrash2: View {
-    @Binding var message: String
     @Binding var countAll: Int
+    @Binding var wrongCollision: Bool
     let plasticX: CGFloat
     let plasticY: CGFloat
     let glassX: CGFloat
@@ -65,9 +65,9 @@ struct GenerateTrash2: View {
     let screenHeight: CGFloat
     let screenWidth: CGFloat
     
-    init(plasticX: CGFloat, plasticY: CGFloat, glassX: CGFloat, glassY: CGFloat, metalX: CGFloat, metalY: CGFloat, organicX: CGFloat, organicY: CGFloat,message: Binding<String>, count: Binding<Int>){
-        self._message = message
+    init(plasticX: CGFloat, plasticY: CGFloat, glassX: CGFloat, glassY: CGFloat, metalX: CGFloat, metalY: CGFloat, organicX: CGFloat, organicY: CGFloat, count: Binding<Int>, wrongCollision: Binding<Bool>){
         self._countAll = count
+        self._wrongCollision = wrongCollision
         self.plasticX = plasticX
         self.plasticY = plasticY
         self.glassX = glassX
@@ -81,15 +81,15 @@ struct GenerateTrash2: View {
     }
     
     var body: some View {
-        Trash(x: self.screenWidth*0.1*8.5, y: self.screenHeight*(0.5+((0.75-0.5)/2)*1.05), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "plastic", count: self.$countAll, angle: 257)
-        Trash(x: self.screenWidth*0.1*7.5, y: self.screenHeight*(0.5+((0.75-0.5)/3)*1.15), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "metal", count: self.$countAll, angle: 129)
-        Trash(x: self.screenWidth*0.1*6.5, y: self.screenHeight*(0.5+((0.75-0.5)/4)*1.25), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "glass", count: self.$countAll, angle: 78)
-        Trash(x: self.screenWidth*0.1*5.5, y: self.screenHeight*(0.5+((0.75-0.5)/5)*1.35), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "organic", count: self.$countAll, angle: 67)
+        Trash(x: self.screenWidth*0.1*8.5, y: self.screenHeight*(0.5+((0.75-0.5)/2)*1.05), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "plastic", count: self.$countAll, angle: 257, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*7.5, y: self.screenHeight*(0.5+((0.75-0.5)/3)*1.15), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "metal", count: self.$countAll, angle: 129, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*6.5, y: self.screenHeight*(0.5+((0.75-0.5)/4)*1.25), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "glass", count: self.$countAll, angle: 78, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*5.5, y: self.screenHeight*(0.5+((0.75-0.5)/5)*1.35), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "organic", count: self.$countAll, angle: 67, wrongCollision: self.$wrongCollision)
         
-        Trash(x: self.screenWidth*0.1*4.5, y: self.screenHeight*(0.5+((0.75-0.5)/2)*1.1), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "organic", count: self.$countAll, angle: 98)
-        Trash(x: self.screenWidth*0.1*3.5, y: self.screenHeight*(0.5+((0.75-0.5)/3)*1.2), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "plastic", count: self.$countAll, angle: 24)
-        Trash(x: self.screenWidth*0.1*2.5, y: self.screenHeight*(0.5+((0.75-0.5)/4)*1.3), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "metal", count: self.$countAll, angle: 22)
-        Trash(x: self.screenWidth*0.1*1.5, y: self.screenHeight*(0.5+((0.75-0.5)/5)*1.4), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY, message: self.$message, type: "glass", count: self.$countAll, angle: 345)
+        Trash(x: self.screenWidth*0.1*4.5, y: self.screenHeight*(0.5+((0.75-0.5)/2)*1.1), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "organic", count: self.$countAll, angle: 98, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*3.5, y: self.screenHeight*(0.5+((0.75-0.5)/3)*1.2), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "plastic", count: self.$countAll, angle: 24, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*2.5, y: self.screenHeight*(0.5+((0.75-0.5)/4)*1.3), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "metal", count: self.$countAll, angle: 22, wrongCollision: self.$wrongCollision)
+        Trash(x: self.screenWidth*0.1*1.5, y: self.screenHeight*(0.5+((0.75-0.5)/5)*1.4), plasticX: self.plasticX, plasticY: self.plasticY, glassX: self.glassX, glassY: self.glassY, metalX: self.metalX, metalY: self.metalY, organicX: self.organicX, organicY: self.organicY,  type: "glass", count: self.$countAll, angle: 345, wrongCollision: self.$wrongCollision)
         
     }
 }

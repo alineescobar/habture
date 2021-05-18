@@ -4,15 +4,14 @@
 //
 //  Created by Giovanni Madalozzo on 13/05/21.
 //
-
 import SwiftUI
 
 struct Trash: View {
     @State var xPos1: CGFloat
     @State var yPos1: CGFloat
     @State var collision: Bool = false
-    @Binding var message: String
     @Binding var count: Int
+    @Binding var wrongCollision: Bool
     let plasticX: CGFloat
     let plasticY: CGFloat
     let glassX: CGFloat
@@ -27,7 +26,7 @@ struct Trash: View {
     private var initialPosX: CGFloat
     private var initialPosY: CGFloat
     
-    init(x:CGFloat, y:CGFloat, plasticX:CGFloat, plasticY:CGFloat, glassX:CGFloat, glassY:CGFloat, metalX:CGFloat, metalY:CGFloat, organicX:CGFloat, organicY:CGFloat, message: Binding<String>, type: String, count: Binding<Int>, angle: Double) {
+    init(x:CGFloat, y:CGFloat, plasticX:CGFloat, plasticY:CGFloat, glassX:CGFloat, glassY:CGFloat, metalX:CGFloat, metalY:CGFloat, organicX:CGFloat, organicY:CGFloat, type: String, count: Binding<Int>, angle: Double, wrongCollision: Binding<Bool>) {
         self.xPos1 = x
         self.yPos1 = y
         self.plasticX = plasticX
@@ -38,81 +37,84 @@ struct Trash: View {
         self.metalY = metalY
         self.organicX = organicX
         self.organicY = organicY
-        self._message = message
         self.type = type
         self.initialPosX = x
         self.initialPosY = y
         self._count = count
         self.angle = angle
+        self._wrongCollision = wrongCollision
     }
     
     var body: some View {
-        Image(self.type)
-            .rotationEffect(Angle(degrees: self.angle))
-            .frame(width: 35, height: 35)
-            .position(x: self.xPos1, y: self.yPos1)
-            .isHidden(self.collision)
-            .gesture(
-            DragGesture()
-                .onChanged({value in
-                    self.message = ""
-                    self.xPos1 = value.location.x
-                    self.yPos1 = value.location.y
-                })
-                .onEnded({_ in
-                    self.checkCollision()
-                })
-            )
+        ZStack{
+            Image(self.type)
+                .rotationEffect(Angle(degrees: self.angle))
+                .frame(width: 35, height: 35)
+                .position(x: self.xPos1, y: self.yPos1)
+                .isHidden(self.collision)
+                .gesture(
+                    DragGesture()
+                        .onChanged({value in
+                            self.wrongCollision = false
+                            self.xPos1 = value.location.x
+                            self.yPos1 = value.location.y
+                        })
+                        .onEnded({_ in
+                            self.checkCollision()
+                        })
+                )
+        }
     }
     
     func checkCollision (){
         
         if abs(self.plasticX - self.xPos1) < 50 && abs(self.plasticY - self.yPos1) < 50{
             if self.type == "plastic"{
-                self.message = "Isso mesmo!"
                 self.count += 1
                 self.collision = true
             }else{
-                self.message = "Errou!"
                 self.xPos1 = initialPosX
                 self.yPos1 = initialPosY
                 self.collision = false
+                self.wrongCollision = true
             }
         }else if abs(self.glassX - self.xPos1) < 50 && abs(self.glassY - self.yPos1) < 50{
             if self.type == "glass"{
-                self.message = "Isso mesmo!"
                 self.count += 1
                 self.collision = true
             }else{
-                self.message = "Errou!"
                 self.xPos1 = initialPosX
                 self.yPos1 = initialPosY
                 self.collision = false
+                self.wrongCollision = true
             }
         }else if abs(self.metalX - self.xPos1) < 50 && abs(self.metalY - self.yPos1) < 50{
             if self.type == "metal"{
-                self.message = "Isso mesmo!"
                 self.count += 1
                 self.collision = true
             }else{
-                self.message = "Errou!"
                 self.xPos1 = initialPosX
                 self.yPos1 = initialPosY
                 self.collision = false
+                self.wrongCollision = true
             }
         }else if abs(self.organicX - self.xPos1) < 50 && abs(self.organicY - self.yPos1) < 50{
             if self.type == "organic"{
-                self.message = "Isso mesmo!"
                 self.count += 1
                 self.collision = true
             }else{
-                self.message = "Errou!"
                 self.xPos1 = initialPosX
                 self.yPos1 = initialPosY
                 self.collision = false
+                self.wrongCollision = true
             }
         }
-}
+    }
+    func delayModal() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.wrongCollision = false
+        }
+    }
 }
 
 extension View {
