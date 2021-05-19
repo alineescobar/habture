@@ -24,6 +24,12 @@
 		16EEFD1D265575340081281F /* ModalMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EEFD1C265575340081281F /* ModalMetal.swift */; };
 		16EEFD1F265575AD0081281F /* ModalVidro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EEFD1E265575AD0081281F /* ModalVidro.swift */; };
 		16EEFD21265576AB0081281F /* ModalOrganico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EEFD20265576AB0081281F /* ModalOrganico.swift */; };
+		293972F626558E1B00754C72 /* ModalWrongGarbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293972F026558E1B00754C72 /* ModalWrongGarbage.swift */; };
+		293972F726558E1B00754C72 /* GenerateTrash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293972F126558E1B00754C72 /* GenerateTrash.swift */; };
+		293972F826558E1B00754C72 /* GameFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293972F226558E1B00754C72 /* GameFront.swift */; };
+		293972F926558E1B00754C72 /* Garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293972F326558E1B00754C72 /* Garbage.swift */; };
+		293972FA26558E1B00754C72 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293972F426558E1B00754C72 /* Trash.swift */; };
+		293972FB26558E1B00754C72 /* GenerateGarbages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293972F526558E1B00754C72 /* GenerateGarbages.swift */; };
 		C0867623264C6FF200EEE193 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0867622264C6FF200EEE193 /* Game.swift */; };
 		C09BB2CE264C5F1B00D0BDCF /* ModalCongragulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BB2CB264C5F1B00D0BDCF /* ModalCongragulations.swift */; };
 		C09BB2CF264C5F1B00D0BDCF /* PersonalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */; };
@@ -50,6 +56,12 @@
 		16EEFD1C265575340081281F /* ModalMetal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalMetal.swift; sourceTree = "<group>"; };
 		16EEFD1E265575AD0081281F /* ModalVidro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalVidro.swift; sourceTree = "<group>"; };
 		16EEFD20265576AB0081281F /* ModalOrganico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalOrganico.swift; sourceTree = "<group>"; };
+		293972F026558E1B00754C72 /* ModalWrongGarbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalWrongGarbage.swift; sourceTree = "<group>"; };
+		293972F126558E1B00754C72 /* GenerateTrash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateTrash.swift; sourceTree = "<group>"; };
+		293972F226558E1B00754C72 /* GameFront.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameFront.swift; sourceTree = "<group>"; };
+		293972F326558E1B00754C72 /* Garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Garbage.swift; sourceTree = "<group>"; };
+		293972F426558E1B00754C72 /* Trash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
+		293972F526558E1B00754C72 /* GenerateGarbages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateGarbages.swift; sourceTree = "<group>"; };
 		C0867622264C6FF200EEE193 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		C09BB2CB264C5F1B00D0BDCF /* ModalCongragulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalCongragulations.swift; sourceTree = "<group>"; };
 		C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalizedButton.swift; sourceTree = "<group>"; };
@@ -129,6 +141,12 @@
 		C09BB2CC264C5F1B00D0BDCF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				293972F226558E1B00754C72 /* GameFront.swift */,
+				293972F326558E1B00754C72 /* Garbage.swift */,
+				293972F526558E1B00754C72 /* GenerateGarbages.swift */,
+				293972F126558E1B00754C72 /* GenerateTrash.swift */,
+				293972F026558E1B00754C72 /* ModalWrongGarbage.swift */,
+				293972F426558E1B00754C72 /* Trash.swift */,
 				C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */,
 				16249FF3264ED8F900AEFCB4 /* ButtonStyles.swift */,
 				16527CD1265306CE00EA7D73 /* PersonalizedModal.swift */,
@@ -205,12 +223,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293972FA26558E1B00754C72 /* Trash.swift in Sources */,
 				C09BB2CE264C5F1B00D0BDCF /* ModalCongragulations.swift in Sources */,
 				C0E7A0D3264DFBBB008A070C /* Awards.swift in Sources */,
 				16249FF4264ED8F900AEFCB4 /* ButtonStyles.swift in Sources */,
 				C09BB2CF264C5F1B00D0BDCF /* PersonalizedButton.swift in Sources */,
 				C0867623264C6FF200EEE193 /* Game.swift in Sources */,
 				1651A33426446E2E002888DD /* ContentView.swift in Sources */,
+				293972F726558E1B00754C72 /* GenerateTrash.swift in Sources */,
+				293972FB26558E1B00754C72 /* GenerateGarbages.swift in Sources */,
 				1651A33226446E2E002888DD /* habtureApp.swift in Sources */,
 				1613DE89264C98AC00D9BDE4 /* Constants.swift in Sources */,
 				07DD78962649C81D00B33E9E /* categories.swift in Sources */,
@@ -218,6 +239,9 @@
 				163D092F264DADA0008DBFE2 /* Survey.swift in Sources */,
 				16EEFD1B2655732B0081281F /* ModalPlastico.swift in Sources */,
 				1613DE8B264D9D7A00D9BDE4 /* Question.swift in Sources */,
+				293972F626558E1B00754C72 /* ModalWrongGarbage.swift in Sources */,
+				293972F826558E1B00754C72 /* GameFront.swift in Sources */,
+				293972F926558E1B00754C72 /* Garbage.swift in Sources */,
 				165CCC43264B2D0500FBD39B /* ViewRouter.swift in Sources */,
 				16EEFD1F265575AD0081281F /* ModalVidro.swift in Sources */,
 				16EEFD21265576AB0081281F /* ModalOrganico.swift in Sources */,
