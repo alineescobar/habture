@@ -10,12 +10,33 @@ import SwiftUI
 struct Game: View {
     @Environment(\.presentationMode) var presentationMode
     @State var openModal: Bool = false
+    @State var openModalPlastico: Bool = false
+    @Binding var completedCollectDestinoLixo: Bool
+    @EnvironmentObject var a: Reloud
+
+    init(completedCollectDestinoLixo: Binding<Bool>) {
+        self._completedCollectDestinoLixo = completedCollectDestinoLixo
+    }
+    
     var body: some View {
         ZStack {
-            GameFront()
+            if openModalPlastico {
+                Text(a.a)
+                    .lineLimit(nil)
+            } else {
+                Text(a.a)
+                    .lineLimit(nil)
+            }
+            GameFront(completedCollectDestinoLixo: $completedCollectDestinoLixo)
                 .zIndex(30)
+                .onChange(of: completedCollectDestinoLixo, perform: { value in
+                    print(value)
+                    if value {
+                        openModalPlastico.toggle()
+                    }
+                    print(openModalPlastico)
+                })
             GeometryReader { geometry in
-                
                 Image("CenarioPraia")
                     .resizable()
                     .scaledToFill()
@@ -48,19 +69,18 @@ struct Game: View {
                                 .font(.title)
                                 .foregroundColor(Color("Purple2"))
                         })
-                        .fullScreenCover(isPresented: $openModal){
-                            ModalQuizEnd()
-                        }
                     }
+                }.fullScreenCover(isPresented: $openModalPlastico){
+                    ModalPlastico()
                 }
                 .padding(.horizontal)
             }
         }
     }
 }
-
-struct Game_Previews: PreviewProvider {
-    static var previews: some View {
-        Game()
-    }
-}
+//
+//struct Game_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Game(completedDestinoLixo: false)
+//    }
+//}

@@ -9,15 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewRouter: ViewRouter
+    @State var completedCollectDestinoLixo: Bool = false
+    
     var body: some View{
         GeometryReader { geometry in
             ZStack {
                 Spacer()
                 switch viewRouter.currentPage {
                 case .categorias:
-                    categories()
+                    categories(completedCollectDestinoLixo: $completedCollectDestinoLixo)
                 case .conquistas:
-                    Awards()
+                    Awards(completedCollectDestinoLixo: $completedCollectDestinoLixo)
                 case .ajustes:
                     Text("AJUSTES")
                 case .perfil:
@@ -87,7 +89,7 @@ extension View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewRouter: ViewRouter())
+        ContentView(viewRouter: ViewRouter(), completedCollectDestinoLixo: false)
     }
 }
 

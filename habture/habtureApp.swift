@@ -12,6 +12,11 @@ struct habtureApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(viewRouter: ViewRouter())
+                .environmentObject(Reloud())
         }
     }
+}
+
+class Reloud: ObservableObject {
+    @Published var a: String = " "
 }
