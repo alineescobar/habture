@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct Awards: View {
+    @Binding var completedCollectDestinoLixo: Bool
+    
+    init(completedCollectDestinoLixo: Binding<Bool>) {
+        self._completedCollectDestinoLixo = completedCollectDestinoLixo
+    }
+    
     var body: some View {
         VStack {
             Spacer()
@@ -39,18 +45,24 @@ struct Awards: View {
                                 )
                                 .offset(y: -90.0)
                             
-                            HStack(alignment: .bottom) {
-                                Image("plastico")
-                                Spacer()
-                                Image("vidro")
-                                Spacer()
-                                Image("premioDestinoLixo")
-                                Spacer()
-                                Image("organico")
-                                Spacer()
-                                Image("metal")
+                            if completedCollectDestinoLixo {
+                                HStack(alignment: .bottom) {
+                                    Image("plastico")
+                                    Spacer()
+                                    Image("vidro")
+                                    Spacer()
+                                    //Image("premioDestinoLixo")
+                                    Image("premioGenerico")
+                                    Spacer()
+                                    Image("organico")
+                                    Spacer()
+                                    Image("metal")
+                                }
+                                .padding(.horizontal,28)
+                            } else {
+                                Image("premioGenerico")
                             }
-                            .padding(.horizontal,28)
+                            
                         }
                     )
                     .padding(.horizontal,20)
@@ -131,10 +143,10 @@ struct Awards: View {
     }
 }
 
-struct Awards_Previews: PreviewProvider {
+/*struct Awards_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             Awards()
         }
     }
-}
+}*/

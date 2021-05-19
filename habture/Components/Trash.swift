@@ -121,6 +121,7 @@ struct Trash: View {
                 self.wrongCollision = true
             }
         }
+        
     }
     func delayModal() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
