@@ -9,6 +9,11 @@ import SwiftUI
 
 struct categories: View {
     @State var play: Bool =  false
+    @Binding var completedCollectDestinoLixo: Bool
+    
+    init(completedCollectDestinoLixo: Binding<Bool>) {
+        self._completedCollectDestinoLixo = completedCollectDestinoLixo
+    }
     
     var body: some View {
         
@@ -39,7 +44,9 @@ struct categories: View {
                                 .foregroundColor(.white)
                         )
                 }
-                .fullScreenCover(isPresented: $play, content: Game.init)
+                .fullScreenCover(isPresented: $play) {
+                    Game(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                }
                 Spacer()
                     .frame(height: 14)
                 Button(action: {
@@ -95,8 +102,8 @@ struct categories: View {
     }
 }
 
-struct categories_Previews: PreviewProvider {
+/*struct categories_Previews: PreviewProvider {
     static var previews: some View {
         categories()
     }
-}
+}*/
