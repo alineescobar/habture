@@ -12,7 +12,8 @@ struct Game: View {
     
     var body: some View {
         ZStack {
-            
+            GameFront()
+                .zIndex(30)
             GeometryReader { geometry in
                 
                 Image("CenarioPraia")
