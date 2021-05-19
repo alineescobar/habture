@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		07DD78962649C81D00B33E9E /* categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD78952649C81D00B33E9E /* categories.swift */; };
-		07DD7898264B21DA00B33E9E /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD7897264B21DA00B33E9E /* ProgressBar.swift */; };
 		1613DE89264C98AC00D9BDE4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613DE88264C98AC00D9BDE4 /* Constants.swift */; };
 		1613DE8B264D9D7A00D9BDE4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613DE8A264D9D7A00D9BDE4 /* Question.swift */; };
 		16249FF4264ED8F900AEFCB4 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16249FF3264ED8F900AEFCB4 /* ButtonStyles.swift */; };
@@ -21,6 +20,10 @@
 		16527CD2265306CE00EA7D73 /* PersonalizedModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16527CD1265306CE00EA7D73 /* PersonalizedModal.swift */; };
 		165CCC43264B2D0500FBD39B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165CCC42264B2D0500FBD39B /* ViewRouter.swift */; };
 		16A961EE2652ACE100564722 /* ModalQuizEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A961ED2652ACE100564722 /* ModalQuizEnd.swift */; };
+		16EEFD1B2655732B0081281F /* ModalPlastico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EEFD1A2655732B0081281F /* ModalPlastico.swift */; };
+		16EEFD1D265575340081281F /* ModalMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EEFD1C265575340081281F /* ModalMetal.swift */; };
+		16EEFD1F265575AD0081281F /* ModalVidro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EEFD1E265575AD0081281F /* ModalVidro.swift */; };
+		16EEFD21265576AB0081281F /* ModalOrganico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EEFD20265576AB0081281F /* ModalOrganico.swift */; };
 		C0867623264C6FF200EEE193 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0867622264C6FF200EEE193 /* Game.swift */; };
 		C09BB2CE264C5F1B00D0BDCF /* ModalCongragulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BB2CB264C5F1B00D0BDCF /* ModalCongragulations.swift */; };
 		C09BB2CF264C5F1B00D0BDCF /* PersonalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */; };
@@ -29,7 +32,6 @@
 
 /* Begin PBXFileReference section */
 		07DD78952649C81D00B33E9E /* categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categories.swift; sourceTree = "<group>"; };
-		07DD7897264B21DA00B33E9E /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		1613DE88264C98AC00D9BDE4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1613DE8A264D9D7A00D9BDE4 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		16249FF3264ED8F900AEFCB4 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -44,6 +46,10 @@
 		16527CD1265306CE00EA7D73 /* PersonalizedModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalizedModal.swift; sourceTree = "<group>"; };
 		165CCC42264B2D0500FBD39B /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		16A961ED2652ACE100564722 /* ModalQuizEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalQuizEnd.swift; sourceTree = "<group>"; };
+		16EEFD1A2655732B0081281F /* ModalPlastico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPlastico.swift; sourceTree = "<group>"; };
+		16EEFD1C265575340081281F /* ModalMetal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalMetal.swift; sourceTree = "<group>"; };
+		16EEFD1E265575AD0081281F /* ModalVidro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalVidro.swift; sourceTree = "<group>"; };
+		16EEFD20265576AB0081281F /* ModalOrganico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalOrganico.swift; sourceTree = "<group>"; };
 		C0867622264C6FF200EEE193 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		C09BB2CB264C5F1B00D0BDCF /* ModalCongragulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalCongragulations.swift; sourceTree = "<group>"; };
 		C09BB2CD264C5F1B00D0BDCF /* PersonalizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalizedButton.swift; sourceTree = "<group>"; };
@@ -90,7 +96,6 @@
 				1651A33A26446E2F002888DD /* Info.plist */,
 				1651A33726446E2F002888DD /* Preview Content */,
 				07DD78952649C81D00B33E9E /* categories.swift */,
-				07DD7897264B21DA00B33E9E /* ProgressBar.swift */,
 				16350D32264EB83D00E2AA17 /* Pergunta.swift */,
 				165CCC42264B2D0500FBD39B /* ViewRouter.swift */,
 				1613DE88264C98AC00D9BDE4 /* Constants.swift */,
@@ -113,6 +118,10 @@
 				16A961ED2652ACE100564722 /* ModalQuizEnd.swift */,
 				C0867622264C6FF200EEE193 /* Game.swift */,
 				C0E7A0D2264DFBBB008A070C /* Awards.swift */,
+				16EEFD1A2655732B0081281F /* ModalPlastico.swift */,
+				16EEFD1C265575340081281F /* ModalMetal.swift */,
+				16EEFD1E265575AD0081281F /* ModalVidro.swift */,
+				16EEFD20265576AB0081281F /* ModalOrganico.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,12 +212,15 @@
 				C0867623264C6FF200EEE193 /* Game.swift in Sources */,
 				1651A33426446E2E002888DD /* ContentView.swift in Sources */,
 				1651A33226446E2E002888DD /* habtureApp.swift in Sources */,
-				07DD7898264B21DA00B33E9E /* ProgressBar.swift in Sources */,
 				1613DE89264C98AC00D9BDE4 /* Constants.swift in Sources */,
 				07DD78962649C81D00B33E9E /* categories.swift in Sources */,
+				16EEFD1D265575340081281F /* ModalMetal.swift in Sources */,
 				163D092F264DADA0008DBFE2 /* Survey.swift in Sources */,
+				16EEFD1B2655732B0081281F /* ModalPlastico.swift in Sources */,
 				1613DE8B264D9D7A00D9BDE4 /* Question.swift in Sources */,
 				165CCC43264B2D0500FBD39B /* ViewRouter.swift in Sources */,
+				16EEFD1F265575AD0081281F /* ModalVidro.swift in Sources */,
+				16EEFD21265576AB0081281F /* ModalOrganico.swift in Sources */,
 				16A961EE2652ACE100564722 /* ModalQuizEnd.swift in Sources */,
 				16350D33264EB83D00E2AA17 /* Pergunta.swift in Sources */,
 				16527CD2265306CE00EA7D73 /* PersonalizedModal.swift in Sources */,

@@ -12,27 +12,38 @@ struct ModalQuizEnd: View {
     @State var openScreen: Bool = false
     
     var body: some View {
-        VStack {
-            VStack{
-                ZStack{
+        ZStack {
+            ZStack{
+                HStack{
+                    Color.white
+                }.ignoresSafeArea()
+                .background(Color.clear)
+                VStack{
                     PersonalizedModal(
                         bgColor: Color("Yellow"),
                         shadowColor: Color("Orange1"),
-                        circleColor: Color("Purple2"),
+                        circleColor: Color("BackgroundColor"),
                         circleStrokeColor: Color("Yellow"),
                         buttonBgColor: Color("Purple2"),
                         buttonShadowColor: Color("Purple3"),
-                        nomeImagem: "premio",
+                        nomeImagem: "premioDestinoLixo",
                         titulo: "Bom trabalho!",
-                        textos: ["Os vidros não são biodegradáveis e permanecem na natureza por cerca de dez mil anos.", "Para cada tonelada de vidro reciclado, gasta-se menos 70% do que se gastaria para fabricar mais vidro;"],
-                        alturaMax: 500,
-                        temFonte: true,
+                        textos: ["Você respondeu 1/4 questões corretamente."],
+                        alturaMax: 200,
+                        imageWidth: 41,
+                        imageHeight: 53,
+                        temFonte: false,
                         temCirculo: true,
-                        fonte: "https://www.psdovidro.com.br/descubra-tudo-sobre-a-reciclagem-de-vidro/",
-                        circleWithX: ContentView(viewRouter: ViewRouter()),
-                        buttonText: "Finalizar",
-                        buttonDestination: ContentView(viewRouter: ViewRouter())
+                        temCloseButton: true,
+                        fonte: "",
+                        circleWithX: ContentView(viewRouter: ViewRouter())
                     )
+                    
+                    Button(""){
+                    }
+                    .buttonStyle(CommonUseButton(text: "Coletar troféu", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
+                    .padding(EdgeInsets(top: 34, leading: 40, bottom: 0, trailing: 40))
+
                 }
             }
         }

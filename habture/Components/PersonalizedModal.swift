@@ -10,18 +10,15 @@ import SwiftUI
 struct PersonalizedModal: View {
     @Environment(\.presentationMode) var presentationMode
     @State var closeButton: Bool = false
-    @State var modalButton: Bool = false
     
     let bgColor, shadowColor, circleColor, circleStrokeColor, buttonBgColor, buttonShadowColor: Color
     let nomeImagem: String
     let titulo: String
     let textos: [String]
-    let alturaMax: CGFloat
-    let temFonte, temCirculo: Bool
+    let alturaMax, imageWidth, imageHeight: CGFloat
+    let temFonte, temCirculo, temCloseButton: Bool
     let fonte: String
     let circleWithX: ContentView
-    let buttonText: String
-    let buttonDestination: ContentView
     
     var body: some View {
         HStack{
@@ -48,11 +45,14 @@ struct PersonalizedModal: View {
                                                     .position(x: geometry.size.width/2)
                                                     .frame(width: 80, height: 80)
                                                 Image(nomeImagem)
+                                                    .resizable()
+                                                    .frame(width: imageWidth, height: imageHeight)
                                                     .position(x: geometry.size.width/2)
                                             }
                                         }
                                     }
                                     .frame(width:80, height: 51)
+                                    
                                     HStack{
                                         Button(action: {
                                             closeButton.toggle()
@@ -62,7 +62,8 @@ struct PersonalizedModal: View {
                                                 .frame(width: 30, height: 30, alignment: .center)
                                                 .foregroundColor(Color("Purple2"))
                                         })
-                                    }.padding(.leading, -140)
+                                    }
+                                    .padding(.leading, -140)
                                     .fullScreenCover(isPresented: $closeButton){
                                         circleWithX
                                     }
@@ -80,6 +81,7 @@ struct PersonalizedModal: View {
                                             .multilineTextAlignment(.center)
                                             .font(.system(size: 22, design: .rounded))
                                             .padding(EdgeInsets(top: 10, leading: 36, bottom: 0, trailing: 36))
+                                        Spacer()
                                     }
                                     if (temFonte){
                                         Spacer()
@@ -95,21 +97,32 @@ struct PersonalizedModal: View {
                             }
                         )
                 }
-                Button(""){
-                    modalButton.toggle()
-                }
-                .buttonStyle(CommonUseButton(text: buttonText, bgColor: buttonBgColor, shadowColor: buttonShadowColor))
-                .padding(.top, 34)
-                .fullScreenCover(isPresented: $modalButton){
-                    buttonDestination
-                }
             }
-        }.padding(.horizontal, 40)
+        }
+        .padding(.horizontal, 40)
     }
 }
 
 struct PersonalizedModal_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalizedModal(bgColor: Color("Yellow"), shadowColor: Color("Orange1"), circleColor: Color("Purple2"), circleStrokeColor: Color("Yellow"), buttonBgColor: Color("Purple2"), buttonShadowColor: Color("Purple3"), nomeImagem: "premio",titulo: "Bom trabalho!", textos: ["Você respondeu 4/4 questões corretamente."],  alturaMax: 300, temFonte: true, temCirculo: true, fonte: "Fonte: https://cbn.globoradio.globo.com/media/audio/243607/apenas-1-do-lixo-organico-e-reaproveitado-no-brasi.htm", circleWithX: ContentView(viewRouter: ViewRouter()), buttonText: "Finalizar", buttonDestination: ContentView(viewRouter: ViewRouter()))
+        PersonalizedModal(
+            bgColor: Color("Yellow"),
+            shadowColor: Color("Orange1"),
+            circleColor: Color("BackgroundColor"),
+            circleStrokeColor: Color("Yellow"),
+            buttonBgColor: Color("Purple2"),
+            buttonShadowColor: Color("Purple3"),
+            nomeImagem: "premioDestinoLixo",
+            titulo: "Bom trabalho!",
+            textos: ["Você respondeu 4/4 questões corretamente."],
+            alturaMax: 200,
+            imageWidth: 41,
+            imageHeight: 53,
+            temFonte: false,
+            temCirculo: true,
+            temCloseButton: true,
+            fonte: "Fonte: https://cbn.globoradio.globo.com/media/audio/243607/apenas-1-do-lixo-organico-e-reaproveitado-no-brasi.htm",
+            circleWithX: ContentView(viewRouter: ViewRouter())
+        )
     }
 }

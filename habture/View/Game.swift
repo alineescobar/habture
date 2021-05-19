@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Game: View {
     @Environment(\.presentationMode) var presentationMode
-    
+    @State var openModal: Bool = false
     var body: some View {
         ZStack {
             
@@ -40,11 +40,16 @@ struct Game: View {
                         
                         Spacer()
                         
-                        Button(action: {}, label: {
+                        Button(action: {
+                            openModal.toggle()
+                        }, label: {
                             Image(systemName: "gearshape")
                                 .font(.title)
                                 .foregroundColor(Color("Purple2"))
                         })
+                        .fullScreenCover(isPresented: $openModal){
+                            ModalQuizEnd()
+                        }
                     }
                 }
                 .padding(.horizontal)
