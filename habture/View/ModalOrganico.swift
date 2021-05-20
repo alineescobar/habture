@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ModalOrganico: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State var openModalCongrats: Bool = false
+    
     var body: some View {
         VStack{
             PersonalizedModal(
@@ -31,10 +34,13 @@ struct ModalOrganico: View {
             )
             
             Button(""){
+                openModalCongrats.toggle()
             }
             .buttonStyle(CommonUseButton(text: "Coletar prêmio", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .padding(EdgeInsets(top: 34, leading: 40, bottom: 0, trailing: 40))
-
+            .fullScreenCover(isPresented: $openModalCongrats, content: {
+                ModalCongragulations()
+            })
         }
     }
 }

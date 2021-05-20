@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Game: View {
     @Environment(\.presentationMode) var presentationMode
-    @State var openModal: Bool = false
     @State var openModalPlastico: Bool = false
     @Binding var completedCollectDestinoLixo: Bool
     @EnvironmentObject var a: Reloud
@@ -30,11 +29,9 @@ struct Game: View {
             GameFront(completedCollectDestinoLixo: $completedCollectDestinoLixo)
                 .zIndex(30)
                 .onChange(of: completedCollectDestinoLixo, perform: { value in
-                    print(value)
                     if value {
                         openModalPlastico.toggle()
                     }
-                    print(openModalPlastico)
                 })
             GeometryReader { geometry in
                 Image("CenarioPraia")
@@ -52,9 +49,8 @@ struct Game: View {
                                 .font(.title)
                                 .foregroundColor(Color("Purple2"))
                         })
-                        
                         Spacer()
-                        
+
                         Text("   Destino do lixo")
                             .font(.title3)
                             .fontWeight(.medium)
@@ -63,12 +59,11 @@ struct Game: View {
                         Spacer()
                         
                         Button(action: {
-                            openModal.toggle()
                         }, label: {
                             Image(systemName: "gearshape")
                                 .font(.title)
                                 .foregroundColor(Color("Purple2"))
-                        })
+                        }).isHidden(true)
                     }
                 }.fullScreenCover(isPresented: $openModalPlastico){
                     ModalPlastico()

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ModalMetal: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State var openModalVidro: Bool = false
+    
     var body: some View {
         VStack{
             PersonalizedModal(
@@ -17,7 +20,7 @@ struct ModalMetal: View {
                 circleStrokeColor: Color("Yellow"),
                 buttonBgColor: Color("Purple2"),
                 buttonShadowColor: Color("Purple3"),
-                nomeImagem: "plastico",
+                nomeImagem: "metal",
                 titulo: "Você sabia?",
                 textos: ["O Brasil é campeão mundial na reciclagem de latas de alumínio."],
                 alturaMax: 300,
@@ -31,10 +34,13 @@ struct ModalMetal: View {
             )
             
             Button(""){
+                openModalVidro.toggle()
             }
             .buttonStyle(CommonUseButton(text: "Coletar prêmio", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .padding(EdgeInsets(top: 34, leading: 40, bottom: 0, trailing: 40))
-
+            .fullScreenCover(isPresented: $openModalVidro){
+                ModalVidro()
+            }
         }
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ModalCongragulations: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State var openSurvey: Bool = false
     
     var body: some View {
         VStack{
@@ -37,9 +39,12 @@ struct ModalCongragulations: View {
             }
             
             Button(""){
-                
+                openSurvey.toggle()
             }.buttonStyle(CommonUseButton(text: "Praticar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .padding(EdgeInsets(top: 32, leading: 40, bottom: 0, trailing: 40))
+            .fullScreenCover(isPresented: $openSurvey){
+                Survey()
+            }
         }
     }
 }
