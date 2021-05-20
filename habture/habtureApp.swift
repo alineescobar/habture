@@ -11,7 +11,7 @@ import SwiftUI
 struct habtureApp: App {
     var body: some Scene {
         WindowGroup {
-            MainOfOnboarding()
+            SplashScreen()
                 .environmentObject(Reloud())
         }
     }
