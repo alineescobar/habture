@@ -12,6 +12,9 @@ struct habtureApp: App {
     var body: some Scene {
         WindowGroup {
             MainOfOnboarding()
+                .environmentObject(Reloud())
+//            ContentView(viewRouter: ViewRouter())
+//                .environmentObject(Reloud())
         }
     }
 }
