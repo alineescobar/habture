@@ -140,7 +140,7 @@ struct Awards: View {
                                 .fill(Color("Pink"))
                                 .frame(width:257,height: 41)
                                 .overlay(
-                                    Text("Consumo sustentável")
+                                    Text("Transporte alternativo")
                                         .fontWeight(.bold)
                                         .font(.system(size: 18, design: .rounded))
                                         .foregroundColor(Color("BackgroundColor"))
