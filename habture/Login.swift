@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Login: View {
-    @State var MainOfOnboarding: Bool = false
+    @State var openOnBoarding: Bool = false
     var body: some View {
         ZStack{
             VStack{
@@ -22,29 +22,34 @@ struct Login: View {
             VStack{
                 Spacer()
                 Group{
-                    Text("Transforme seu ") + Text("\nfuturo ").fontWeight(.bold) + Text("adotando um \n novo ") + Text("hábito").fontWeight(.bold)}
+                    Text("Transforme seu ") + Text("\nfuturo ").fontWeight(.bold) + Text("adotando um \n novo ") + Text("hábito")
+                        .fontWeight(.bold)}
                     .font(.system(size: 26, design: .rounded))
                     .foregroundColor(Color("Purple2"))
                     .multilineTextAlignment(.center)
                     .padding(.top, 120)
                 Spacer()
+                
                 Image("rec")
                     .padding(.bottom, 40)
                 Spacer()
-                Button(
-                    action: {self.MainOfOnboarding = true})
-                {
-                    Text("Próximo")
-                        .frame(width: 280, height: 50, alignment:.center)
-                        .background(Color("Purple2"))
-                        .foregroundColor(.white)
-                        .cornerRadius(25)
+                    .frame(height:160)
+                
+                Button(""){
+                    openOnBoarding.toggle()
                 }
-                .padding(.bottom, 35)
-                Text("Criado por Aline Escobar, Carolina Nobre, Giovanni Madalozzo, Igor Vicente e \nJulia Alberti")
-                    .padding(10)
-                    .padding(.bottom, 30)
+                .buttonStyle(CommonUseButton(text: "Jogar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
+                .padding(.horizontal, 20)
+                .fullScreenCover(isPresented: $openOnBoarding){
+                    MainOfOnboarding()
+                }
+                .padding(.horizontal, 40)
+                
+                Text("Criado por Aline Escobar, Carolina Nobre, Giovanni Madalozzo, Igor Vicente e Julia Alberti")
+                    .font(.system(size: 13, design: .rounded))
+                    .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
+                    .padding(EdgeInsets(top: 20, leading: 40, bottom: 40, trailing: 40))
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -56,7 +61,7 @@ struct Login: View {
 
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        Login().previewDevice("iPhone 8")
         Login().previewDevice("iPhone 12")
+        Login().previewDevice("iPhone 8")
     }
 }
