@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ModalQuizEnd: View {
+    @Binding var acertos: Int
     @Environment(\.presentationMode) var presentationMode
-    @State var openScreen: Bool = false
+    @State var openAwardsScreen: Bool = false
     
     var body: some View {
         ZStack {
@@ -28,7 +29,7 @@ struct ModalQuizEnd: View {
                         buttonShadowColor: Color("Purple3"),
                         nomeImagem: "premioDestinoLixo",
                         titulo: "Bom trabalho!",
-                        textos: ["Você respondeu 1/4 questões corretamente."],
+                        textos: ["Você respondeu \(acertos)/4 questões corretamente."],
                         alturaMax: 200,
                         imageWidth: 41,
                         imageHeight: 53,
@@ -40,6 +41,10 @@ struct ModalQuizEnd: View {
                     )
                     
                     Button(""){
+                        if (acertos == 4){
+//                            completedCollectTrophy = true
+                        }
+                        openAwardsScreen.toggle()
                     }
                     .buttonStyle(CommonUseButton(text: "Coletar troféu", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
                     .padding(EdgeInsets(top: 34, leading: 40, bottom: 0, trailing: 40))
@@ -50,8 +55,8 @@ struct ModalQuizEnd: View {
     }
 }
 
-struct ModalQuizEnd_Previews: PreviewProvider {
-    static var previews: some View {
-        ModalQuizEnd()
-    }
-}
+//struct ModalQuizEnd_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ModalQuizEnd(acertos: 1)
+//    }
+//}

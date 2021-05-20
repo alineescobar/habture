@@ -101,7 +101,7 @@ struct Survey: View {
             .frame(maxWidth: 300)
             .padding(.top, 64)
             .fullScreenCover(isPresented: $openModal){
-                ModalQuizEnd()
+                ModalQuizEnd(acertos: $qtdAcertos)
             }
             Spacer()
         }

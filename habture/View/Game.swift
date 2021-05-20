@@ -13,9 +13,6 @@ struct Game: View {
     @Binding var completedCollectDestinoLixo: Bool
     @EnvironmentObject var a: Reloud
 
-    init(completedCollectDestinoLixo: Binding<Bool>) {
-        self._completedCollectDestinoLixo = completedCollectDestinoLixo
-    }
     
     var body: some View {
         ZStack {

@@ -11,10 +11,6 @@ struct categories: View {
     @State var play: Bool =  false
     @Binding var completedCollectDestinoLixo: Bool
     
-    init(completedCollectDestinoLixo: Binding<Bool>) {
-        self._completedCollectDestinoLixo = completedCollectDestinoLixo
-    }
-    
     var body: some View {
         
         VStack{
@@ -45,7 +41,9 @@ struct categories: View {
                         )
                 }
                 .fullScreenCover(isPresented: $play) {
-                    Game(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                    Game(
+                        completedCollectDestinoLixo: $completedCollectDestinoLixo
+                        )
                 }
                 Spacer()
                     .frame(height: 14)
