@@ -19,11 +19,12 @@ struct ContentView: View {
                 switch viewRouter.currentPage {
                 case .categorias:
                     categories(
-                        completedCollectDestinoLixo: $completedCollectDestinoLixo
+                        completedCollectDestinoLixo: $completedCollectDestinoLixo,
+                        completedCollectTrophy: $completedCollectTrophy
                     )
                 case .conquistas:
                     Awards(
-                        completedCollectDestinoLixo: $completedCollectDestinoLixo
+                        completedCollectDestinoLixo: $completedCollectDestinoLixo, completedCollectTrophy: $completedCollectTrophy
                     )
                 case .ajustes:
                     Text("AJUSTES")

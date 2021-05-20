@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ModalQuizEnd: View {
     @Binding var completedCollectDestinoLixo: Bool
+    @Binding var completedCollectTrophy: Bool
     @Binding var acertos: Int
     @Environment(\.presentationMode) var presentationMode
     @State var openAwardsScreen: Bool = false
@@ -43,14 +44,17 @@ struct ModalQuizEnd: View {
                     
                     Button(""){
                         if (acertos == 4){
-//                            completedCollectTrophy = true
+                            completedCollectTrophy = true
                         }
                         openAwardsScreen.toggle()
                     }
                     .buttonStyle(CommonUseButton(text: "Coletar troféu", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
                     .padding(EdgeInsets(top: 34, leading: 40, bottom: 0, trailing: 40))
                     .fullScreenCover(isPresented: $openAwardsScreen){
-                        Awards(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                        Awards(
+                            completedCollectDestinoLixo: $completedCollectDestinoLixo,
+                            completedCollectTrophy: $completedCollectTrophy
+                        )
                     }
                 }
             }

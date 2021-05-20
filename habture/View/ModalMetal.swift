@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ModalMetal: View {
     @Binding var completedCollectDestinoLixo: Bool
+    @Binding var completedCollectTrophy: Bool
     @Environment(\.presentationMode) var presentationMode
     @State var openModalVidro: Bool = false
     
@@ -40,7 +41,10 @@ struct ModalMetal: View {
             .buttonStyle(CommonUseButton(text: "Coletar prêmio", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .padding(EdgeInsets(top: 34, leading: 40, bottom: 0, trailing: 40))
             .fullScreenCover(isPresented: $openModalVidro){
-                ModalVidro(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                ModalVidro(
+                    completedCollectDestinoLixo: $completedCollectDestinoLixo,
+                    completedCollectTrophy: $completedCollectTrophy
+                    )
             }
         }
     }

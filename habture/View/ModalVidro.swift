@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ModalVidro: View {
     @Binding var completedCollectDestinoLixo: Bool
+    @Binding var completedCollectTrophy: Bool
     @Environment(\.presentationMode) var presentationMode
     @State var openModalOrganico: Bool = false
     
@@ -40,7 +41,10 @@ struct ModalVidro: View {
             .buttonStyle(CommonUseButton(text: "Coletar prêmio", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .padding(EdgeInsets(top: 34, leading: 40, bottom: 0, trailing: 40))
             .fullScreenCover(isPresented: $openModalOrganico){
-                ModalOrganico(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                ModalOrganico(
+                    completedCollectDestinoLixo: $completedCollectDestinoLixo,
+                    completedCollectTrophy: $completedCollectTrophy
+                )
             }
         }
     }

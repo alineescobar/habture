@@ -11,6 +11,7 @@ struct Game: View {
     @Environment(\.presentationMode) var presentationMode
     @State var openModalPlastico: Bool = false
     @Binding var completedCollectDestinoLixo: Bool
+    @Binding var completedCollectTrophy: Bool
     @EnvironmentObject var a: Reloud
 
     
@@ -63,7 +64,10 @@ struct Game: View {
                         }).isHidden(true)
                     }
                 }.fullScreenCover(isPresented: $openModalPlastico){
-                    ModalPlastico(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                    ModalPlastico(
+                        completedCollectDestinoLixo: $completedCollectDestinoLixo,
+                        completedCollectTrophy: $completedCollectTrophy
+                    )
                 }
                 .padding(.horizontal)
             }

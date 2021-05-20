@@ -10,6 +10,7 @@ import SwiftUI
 struct Survey: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var completedCollectDestinoLixo: Bool
+    @Binding var completedCollectTrophy: Bool
     @State private var progess: Int = 45
     @State var escolhidaQuestao: String = ""
     @State var qtdAcertos: Int = 0
@@ -102,7 +103,11 @@ struct Survey: View {
             .frame(maxWidth: 300)
             .padding(.top, 64)
             .fullScreenCover(isPresented: $openModalEndQuiz){
-                ModalQuizEnd(completedCollectDestinoLixo: $completedCollectDestinoLixo, acertos: $qtdAcertos)
+                ModalQuizEnd(
+                    completedCollectDestinoLixo: $completedCollectDestinoLixo,
+                    completedCollectTrophy: $completedCollectTrophy,
+                    acertos: $qtdAcertos
+                )
             }
             Spacer()
         }

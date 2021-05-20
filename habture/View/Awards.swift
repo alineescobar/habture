@@ -9,9 +9,11 @@ import SwiftUI
 
 struct Awards: View {
     @Binding var completedCollectDestinoLixo: Bool
+    @Binding var completedCollectTrophy: Bool
     
-    init(completedCollectDestinoLixo: Binding<Bool>) {
+    init(completedCollectDestinoLixo: Binding<Bool>, completedCollectTrophy: Binding<Bool>) {
         self._completedCollectDestinoLixo = completedCollectDestinoLixo
+        self._completedCollectTrophy = completedCollectTrophy
     }
     
     var body: some View {
@@ -45,13 +47,25 @@ struct Awards: View {
                                 )
                                 .offset(y: -90.0)
                             
-                            if completedCollectDestinoLixo {
+                            if completedCollectDestinoLixo && completedCollectTrophy {
                                 HStack(alignment: .bottom) {
                                     Image("plastico")
                                     Spacer()
                                     Image("vidro")
                                     Spacer()
-                                    //Image("premioDestinoLixo")
+                                    Image("premioDestinoLixo")
+                                    Spacer()
+                                    Image("organico")
+                                    Spacer()
+                                    Image("metal")
+                                }
+                                .padding(.horizontal,28)
+                            } else if completedCollectDestinoLixo {
+                                HStack(alignment: .bottom) {
+                                    Image("plastico")
+                                    Spacer()
+                                    Image("vidro")
+                                    Spacer()
                                     Image("premioGenerico")
                                     Spacer()
                                     Image("organico")
@@ -59,7 +73,8 @@ struct Awards: View {
                                     Image("metal")
                                 }
                                 .padding(.horizontal,28)
-                            } else {
+                            }
+                            else {
                                 Image("premioGenerico")
                             }
                             
