@@ -13,8 +13,6 @@ struct habtureApp: App {
         WindowGroup {
             MainOfOnboarding()
                 .environmentObject(Reloud())
-//            ContentView(viewRouter: ViewRouter())
-//                .environmentObject(Reloud())
         }
     }
 }
