@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ModalPlastico: View {
+    @Binding var completedCollectDestinoLixo: Bool
     @Environment(\.presentationMode) var presentationMode
     @State var openModalMetal: Bool = false
     
@@ -39,18 +40,18 @@ struct ModalPlastico: View {
             .buttonStyle(CommonUseButton(text: "Coletar prêmio", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .padding(EdgeInsets(top: 34, leading: 40, bottom: 0, trailing: 40))
             .fullScreenCover(isPresented: $openModalMetal){
-                ModalMetal()
+                ModalMetal(completedCollectDestinoLixo: $completedCollectDestinoLixo)
             }
 
         }
     }
 }
 
-struct ModalPlastico_Previews: PreviewProvider {
-    static var previews: some View {
-        ModalPlastico()
-            .previewDevice("iPhone 12")
-        ModalPlastico()
-            .previewDevice("iPhone 8")
-    }
-}
+//struct ModalPlastico_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ModalPlastico()
+//            .previewDevice("iPhone 12")
+//        ModalPlastico()
+//            .previewDevice("iPhone 8")
+//    }
+//}

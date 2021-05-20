@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ModalCongragulations: View {
+    @Binding var completedCollectDestinoLixo: Bool
     @Environment(\.presentationMode) var presentationMode
     @State var openSurvey: Bool = false
     
@@ -43,14 +44,14 @@ struct ModalCongragulations: View {
             }.buttonStyle(CommonUseButton(text: "Praticar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .padding(EdgeInsets(top: 32, leading: 40, bottom: 0, trailing: 40))
             .fullScreenCover(isPresented: $openSurvey){
-                Survey()
+                Survey(completedCollectDestinoLixo: $completedCollectDestinoLixo)
             }
         }
     }
 }
 
-struct ModalCongragulations_Previews: PreviewProvider {
-    static var previews: some View {
-        ModalCongragulations()
-    }
-}
+//struct ModalCongragulations_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ModalCongragulations()
+//    }
+//}

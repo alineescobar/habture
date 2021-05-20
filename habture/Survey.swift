@@ -9,10 +9,11 @@ import SwiftUI
 
 struct Survey: View {
     @Environment(\.presentationMode) var presentationMode
+    @Binding var completedCollectDestinoLixo: Bool
     @State private var progess: Int = 45
     @State var escolhidaQuestao: String = ""
     @State var qtdAcertos: Int = 0
-    @State var openModal: Bool = false
+    @State var openModalEndQuiz: Bool = false
     @State var encerraQuesitonario: Bool = false
     
     var body: some View {
@@ -94,23 +95,23 @@ struct Survey: View {
                     if self.progess < 180 {
                         self.progess += 45
                     } else if (progess == 180){
-                        openModal.toggle()
+                        openModalEndQuiz.toggle()
                     }
                 }
             }.buttonStyle(CommonUseButton(text: progess == 180 ? "Finalizar" : "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .frame(maxWidth: 300)
             .padding(.top, 64)
-            .fullScreenCover(isPresented: $openModal){
-                ModalQuizEnd(acertos: $qtdAcertos)
+            .fullScreenCover(isPresented: $openModalEndQuiz){
+                ModalQuizEnd(completedCollectDestinoLixo: $completedCollectDestinoLixo, acertos: $qtdAcertos)
             }
             Spacer()
         }
     }
 }
 
-struct Survey_Previews: PreviewProvider {
-    static var previews: some View {
-        Survey()
-    }
-}
+//struct Survey_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Survey(, completedCollectDestinoLixo: <#Binding<Bool>#>)
+//    }
+//}
 

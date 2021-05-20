@@ -63,7 +63,7 @@ struct Game: View {
                         }).isHidden(true)
                     }
                 }.fullScreenCover(isPresented: $openModalPlastico){
-                    ModalPlastico()
+                    ModalPlastico(completedCollectDestinoLixo: $completedCollectDestinoLixo)
                 }
                 .padding(.horizontal)
             }

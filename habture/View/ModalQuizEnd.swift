@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ModalQuizEnd: View {
+    @Binding var completedCollectDestinoLixo: Bool
     @Binding var acertos: Int
     @Environment(\.presentationMode) var presentationMode
     @State var openAwardsScreen: Bool = false
@@ -48,7 +49,9 @@ struct ModalQuizEnd: View {
                     }
                     .buttonStyle(CommonUseButton(text: "Coletar troféu", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
                     .padding(EdgeInsets(top: 34, leading: 40, bottom: 0, trailing: 40))
-
+                    .fullScreenCover(isPresented: $openAwardsScreen){
+                        Awards(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                    }
                 }
             }
         }
