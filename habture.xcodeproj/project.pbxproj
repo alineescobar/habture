@@ -15,7 +15,7 @@
 		076EF4C226558F5900A17F65 /* GIFPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4C126558F5900A17F65 /* GIFPlayerView.swift */; };
 		076EF4C426558FD700A17F65 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4C326558FD700A17F65 /* UIImageViewExtension.swift */; };
 		076EF4C62655901100A17F65 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4C52655901100A17F65 /* UIImageExtension.swift */; };
-		07DD78962649C81D00B33E9E /* categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD78952649C81D00B33E9E /* categories.swift */; };
+		07DD78962649C81D00B33E9E /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD78952649C81D00B33E9E /* Categories.swift */; };
 		1613DE89264C98AC00D9BDE4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613DE88264C98AC00D9BDE4 /* Constants.swift */; };
 		1613DE8B264D9D7A00D9BDE4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613DE8A264D9D7A00D9BDE4 /* Question.swift */; };
 		16249FF4264ED8F900AEFCB4 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16249FF3264ED8F900AEFCB4 /* ButtonStyles.swift */; };
@@ -53,7 +53,7 @@
 		076EF4C126558F5900A17F65 /* GIFPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFPlayerView.swift; sourceTree = "<group>"; };
 		076EF4C326558FD700A17F65 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		076EF4C52655901100A17F65 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
-		07DD78952649C81D00B33E9E /* categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categories.swift; sourceTree = "<group>"; };
+		07DD78952649C81D00B33E9E /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		1613DE88264C98AC00D9BDE4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1613DE8A264D9D7A00D9BDE4 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		16249FF3264ED8F900AEFCB4 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				163D092E264DADA0008DBFE2 /* Survey.swift */,
 				1651A33A26446E2F002888DD /* Info.plist */,
 				1651A33726446E2F002888DD /* Preview Content */,
-				07DD78952649C81D00B33E9E /* categories.swift */,
+				07DD78952649C81D00B33E9E /* Categories.swift */,
 				16350D32264EB83D00E2AA17 /* Pergunta.swift */,
 				165CCC42264B2D0500FBD39B /* ViewRouter.swift */,
 				1613DE88264C98AC00D9BDE4 /* Constants.swift */,
@@ -271,7 +271,7 @@
 				1651A33226446E2E002888DD /* habtureApp.swift in Sources */,
 				1613DE89264C98AC00D9BDE4 /* Constants.swift in Sources */,
 				076EF4C226558F5900A17F65 /* GIFPlayerView.swift in Sources */,
-				07DD78962649C81D00B33E9E /* categories.swift in Sources */,
+				07DD78962649C81D00B33E9E /* Categories.swift in Sources */,
 				16EEFD1D265575340081281F /* ModalMetal.swift in Sources */,
 				076EF4C62655901100A17F65 /* UIImageExtension.swift in Sources */,
 				076EF4B0265305A700A17F65 /* SplashScreen.swift in Sources */,

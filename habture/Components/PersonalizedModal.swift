@@ -63,7 +63,7 @@ struct PersonalizedModal: View {
                                                 .foregroundColor(Color("Purple2"))
                                         })
                                     }
-                                    .padding(.leading, -140)
+                                    .padding(.leading, -145)
                                     .fullScreenCover(isPresented: $closeButton){
                                         circleWithX
                                     }

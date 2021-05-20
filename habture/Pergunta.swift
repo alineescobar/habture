@@ -19,6 +19,6 @@ let pergunta02 = Pergunta(textoQuestao: "Quanto tempo leva para uma garrafa pet 
 
 let pergunta03 = Pergunta(textoQuestao: "O Brasil é campeão mundial na reciclagem de latas de alumínio.", alternativas: ["Verdadeiro", "Falso"], alternativaCorreta: 0)
 
-let pergunta04 = Pergunta(textoQuestao: "Selecione um composto agressivo para o meio ambiente e seu respectivo substituto ecológico: ", alternativas: ["garrafa pet, copo descartável", "trocar, trocar", "papelão, isopor", "sacolas plásticas, ecobag"], alternativaCorreta: 3)
+let pergunta04 = Pergunta(textoQuestao: "Selecione um composto agressivo para o meio ambiente e seu respectivo substituto ecológico: ", alternativas: ["garrafa pet, copo descartável", "ecobag, sacolas plásticas", "papelão, isopor", "sacolas plásticas, ecobag"], alternativaCorreta: 3)
 
 let perguntasQuestionario = [pergunta01, pergunta02, pergunta03, pergunta04]

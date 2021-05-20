@@ -43,7 +43,7 @@ struct ContentView: View {
                                 iconName: "camera.filters",
                                 tabName: "Categorias"
                             )
-                            .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 13))
+                            .padding(EdgeInsets(top: 0, leading: 90, bottom: 0, trailing: 13))
                             
                             TabBarIcon(
                                 viewRouter: viewRouter,
@@ -53,8 +53,8 @@ struct ContentView: View {
                                 iconName: "rosette",
                                 tabName: "Conquistas"
                             )
-                            .padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 13))
-                            
+                            .padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 90))
+                            /*
                             TabBarIcon(
                                 viewRouter: viewRouter,
                                 assignedPage: Page.ajustes,
@@ -74,6 +74,7 @@ struct ContentView: View {
                                 tabName: "Perfil"
                             )
                             .padding(EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 30))
+                            */
                         }
                         
                     }
