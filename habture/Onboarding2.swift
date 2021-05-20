@@ -10,6 +10,7 @@ import SwiftUI
 struct Onboarding2: View {
     
     @State var Proxima: Bool = false
+    @State var abreContent: Bool = false
     
     var body: some View {
         ZStack{
@@ -22,8 +23,7 @@ struct Onboarding2: View {
                     .foregroundColor(Color("Purple2"))
                     .multilineTextAlignment(.center)
                     .padding(5)
-                Text("Por meio de atividades lúdicas, crie uma rotina mais saudável para sua vida! ")
-                    //.fontWeight(.bold)
+                Text("Por meio de atividades lúdicas, crie uma rotina mais saudável para sua vida!")
                     .font(.system(size: 22, design: .rounded))
                     .foregroundColor(Color("Purple2"))
                     .multilineTextAlignment(.center)
@@ -32,16 +32,13 @@ struct Onboarding2: View {
                 GIFView(gifName: "ideia")
                     .frame(width: 280, height: 321, alignment:.center)
                     .padding(.bottom, 20)
-                Button(
-                    action: {self.Proxima = true})
-                {
-                    Text("Começar")
-                        .frame(width: 296, height: 42, alignment:.center)
-                        .background(Color("Purple2"))
-                        .foregroundColor(.white)
-                        .cornerRadius(25)
+                Button(""){
+                    abreContent.toggle()
+                }.buttonStyle(CommonUseButton(text: "Começar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
+                .padding(.horizontal, 20)
+                .fullScreenCover(isPresented: $abreContent){
+                    ContentView(viewRouter: ViewRouter())
                 }
-                .padding(.bottom)
                 
             }.padding(20)
         }
@@ -52,6 +49,7 @@ struct Onboarding2: View {
 struct Onboarding2_Previews: PreviewProvider {
     static var previews: some View {
         Onboarding2()
+            .previewDevice("iPone 8")
         Onboarding2()
             .previewDevice("iPhone 12")
     }

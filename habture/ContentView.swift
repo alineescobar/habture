@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var viewRouter: ViewRouter
     @State var completedCollectDestinoLixo: Bool = false
+    @State var completedCollectTrophy: Bool = false
     
     var body: some View{
         GeometryReader { geometry in
@@ -17,9 +18,14 @@ struct ContentView: View {
                 Spacer()
                 switch viewRouter.currentPage {
                 case .categorias:
-                    categories(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                    categories(
+                        completedCollectDestinoLixo: $completedCollectDestinoLixo,
+                        completedCollectTrophy: $completedCollectTrophy
+                    )
                 case .conquistas:
-                    Awards(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                    Awards(
+                        completedCollectDestinoLixo: $completedCollectDestinoLixo, completedCollectTrophy: $completedCollectTrophy
+                    )
                 case .ajustes:
                     Text("AJUSTES")
                 case .perfil:

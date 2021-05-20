@@ -11,7 +11,12 @@ import SwiftUI
 struct habtureApp: App {
     var body: some Scene {
         WindowGroup {
-            MainOfOnboarding()
+            SplashScreen()
+                .environmentObject(Reloud())
         }
     }
+}
+
+class Reloud: ObservableObject {
+    @Published var a: String = " "
 }

@@ -9,18 +9,29 @@ import SwiftUI
 
 struct Game: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var openModalPlastico: Bool = false
     @Binding var completedCollectDestinoLixo: Bool
+    @Binding var completedCollectTrophy: Bool
+    @EnvironmentObject var a: Reloud
 
-    init(completedCollectDestinoLixo: Binding<Bool>) {
-        self._completedCollectDestinoLixo = completedCollectDestinoLixo
-    }
     
     var body: some View {
         ZStack {
+            if openModalPlastico {
+                Text(a.a)
+                    .lineLimit(nil)
+            } else {
+                Text(a.a)
+                    .lineLimit(nil)
+            }
             GameFront(completedCollectDestinoLixo: $completedCollectDestinoLixo)
                 .zIndex(30)
+                .onChange(of: completedCollectDestinoLixo, perform: { value in
+                    if value {
+                        openModalPlastico.toggle()
+                    }
+                })
             GeometryReader { geometry in
-                
                 Image("CenarioPraia")
                     .resizable()
                     .scaledToFill()
@@ -36,9 +47,8 @@ struct Game: View {
                                 .font(.title)
                                 .foregroundColor(Color("Purple2"))
                         })
-                        
                         Spacer()
-                        
+
                         Text("   Destino do lixo")
                             .font(.title3)
                             .fontWeight(.medium)
@@ -46,22 +56,27 @@ struct Game: View {
                         
                         Spacer()
                         
-                        Button(action: {}, label: {
+                        Button(action: {
+                        }, label: {
                             Image(systemName: "gearshape")
                                 .font(.title)
                                 .foregroundColor(Color("Purple2"))
-                        })
-                        .hidden()
+                        }).isHidden(true)
                     }
+                }.fullScreenCover(isPresented: $openModalPlastico){
+                    ModalPlastico(
+                        completedCollectDestinoLixo: $completedCollectDestinoLixo,
+                        completedCollectTrophy: $completedCollectTrophy
+                    )
                 }
                 .padding(.horizontal)
             }
         }
     }
 }
-
-/*struct Game_Previews: PreviewProvider {
-    static var previews: some View {
-        Game(completedDestinoLixo: false)
-    }
-}*/
+//
+//struct Game_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Game(completedDestinoLixo: false)
+//    }
+//}

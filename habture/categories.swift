@@ -10,10 +10,7 @@ import SwiftUI
 struct categories: View {
     @State var play: Bool =  false
     @Binding var completedCollectDestinoLixo: Bool
-    
-    init(completedCollectDestinoLixo: Binding<Bool>) {
-        self._completedCollectDestinoLixo = completedCollectDestinoLixo
-    }
+    @Binding var completedCollectTrophy: Bool
     
     var body: some View {
         
@@ -45,7 +42,10 @@ struct categories: View {
                         )
                 }
                 .fullScreenCover(isPresented: $play) {
-                    Game(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                    Game(
+                        completedCollectDestinoLixo: $completedCollectDestinoLixo,
+                        completedCollectTrophy: $completedCollectTrophy
+                        )
                 }
                 Spacer()
                     .frame(height: 14)

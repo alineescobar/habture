@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct Survey: View {
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var completedCollectDestinoLixo: Bool
+    @Binding var completedCollectTrophy: Bool
     @State private var progess: Int = 45
-    @State var atLeastOneSelected: Bool = true
-    
+    @State var escolhidaQuestao: String = ""
+    @State var qtdAcertos: Int = 0
+    @State var openModalEndQuiz: Bool = false
+    @State var encerraQuesitonario: Bool = false
     
     var body: some View {
         VStack{
@@ -18,15 +23,17 @@ struct Survey: View {
                 .font(.system(size: 22, design: .rounded))
                 .foregroundColor(Color("Purple2"))
                 .padding(.top, 30)
-            
             VStack{
                 HStack{
                     Button(action: {
+                        encerraQuesitonario.toggle()
                     }) {
                         Image(systemName: "xmark.circle")
                             .resizable()
                             .frame(width: 30, height: 30)
                             .foregroundColor(Color("Purple2"))
+                    }.fullScreenCover(isPresented: $encerraQuesitonario){
+                        ContentView(viewRouter: ViewRouter())
                     }
                     ZStack(alignment:.leading){
                         Rectangle()
@@ -67,21 +74,50 @@ struct Survey: View {
             }
             
             Button(""){
-                if (atLeastOneSelected){
+                escolhidaQuestao = Question.escolhida
+                if (escolhidaQuestao != ""){
+                    if (progess == 45){
+                        if (escolhidaQuestao == perguntasQuestionario[0].alternativas[perguntasQuestionario[0].alternativaCorreta]) {
+                            qtdAcertos += 1
+                        }
+                    } else if (progess == 90) {
+                        if (escolhidaQuestao == perguntasQuestionario[1].alternativas[perguntasQuestionario[1].alternativaCorreta]) {
+                            qtdAcertos += 1
+                        }
+                    } else if (progess == 135) {
+                        if (escolhidaQuestao == perguntasQuestionario[2].alternativas[perguntasQuestionario[2].alternativaCorreta]) {
+                            qtdAcertos += 1
+                        }
+                    } else if (progess == 180) {
+                        if (escolhidaQuestao == perguntasQuestionario[3].alternativas[perguntasQuestionario[3].alternativaCorreta]) {
+                            qtdAcertos += 1
+                        }
+                    }
                     if self.progess < 180 {
                         self.progess += 45
+                    } else if (progess == 180){
+                        openModalEndQuiz.toggle()
                     }
                 }
             }.buttonStyle(CommonUseButton(text: progess == 180 ? "Finalizar" : "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .frame(maxWidth: 300)
             .padding(.top, 64)
+            .fullScreenCover(isPresented: $openModalEndQuiz){
+                ModalQuizEnd(
+                    completedCollectDestinoLixo: $completedCollectDestinoLixo,
+                    completedCollectTrophy: $completedCollectTrophy,
+                    telaAtual: ViewRouter(),
+                    acertos: $qtdAcertos
+                )
+            }
             Spacer()
         }
     }
 }
 
-struct Survey_Previews: PreviewProvider {
-    static var previews: some View {
-        Survey()
-    }
-}
+//struct Survey_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Survey(, completedCollectDestinoLixo: <#Binding<Bool>#>)
+//    }
+//}
+

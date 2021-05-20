@@ -39,6 +39,7 @@ struct AlternativeButton: ButtonStyle {
     @Binding var isSelected: String
     let text: String
     let bgColor, shadowColor: Color
+
     func makeBody(configuration: Configuration) -> some View {
         ZStack{
             configuration
@@ -47,7 +48,6 @@ struct AlternativeButton: ButtonStyle {
                 .fill(isSelected == text ? bgColor : shadowColor)
                 .frame(maxWidth: .infinity, maxHeight: 42)
                 .cornerRadius(31)
-            
             Rectangle()
                 .fill(isSelected == text ? shadowColor: bgColor)
                 .frame(maxWidth: .infinity, maxHeight: 42)
@@ -60,9 +60,6 @@ struct AlternativeButton: ButtonStyle {
                         .padding()
                 )
                 .offset(y: -5)
-        }
-        .onTapGesture {
-            isSelected = text
         }
     }
 }
