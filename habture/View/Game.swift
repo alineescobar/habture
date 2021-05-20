@@ -9,10 +9,16 @@ import SwiftUI
 
 struct Game: View {
     @Environment(\.presentationMode) var presentationMode
+    @Binding var completedCollectDestinoLixo: Bool
+
+    init(completedCollectDestinoLixo: Binding<Bool>) {
+        self._completedCollectDestinoLixo = completedCollectDestinoLixo
+    }
     
     var body: some View {
         ZStack {
-            
+            GameFront(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+                .zIndex(30)
             GeometryReader { geometry in
                 
                 Image("CenarioPraia")
@@ -45,6 +51,7 @@ struct Game: View {
                                 .font(.title)
                                 .foregroundColor(Color("Purple2"))
                         })
+                        .hidden()
                     }
                 }
                 .padding(.horizontal)
@@ -53,8 +60,8 @@ struct Game: View {
     }
 }
 
-struct Game_Previews: PreviewProvider {
+/*struct Game_Previews: PreviewProvider {
     static var previews: some View {
-        Game()
+        Game(completedDestinoLixo: false)
     }
-}
+}*/
