@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076EF4B0265305A700A17F65 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4AF265305A700A17F65 /* SplashScreen.swift */; };
+		076EF4B22653085100A17F65 /* Onboarding1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4B12653085100A17F65 /* Onboarding1.swift */; };
+		076EF4B42653089100A17F65 /* Onboarding2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4B32653089100A17F65 /* Onboarding2.swift */; };
+		076EF4B62653093D00A17F65 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4B52653093D00A17F65 /* Login.swift */; };
+		076EF4B826541FC600A17F65 /* MainOfOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4B726541FC600A17F65 /* MainOfOnboarding.swift */; };
+		076EF4C226558F5900A17F65 /* GIFPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4C126558F5900A17F65 /* GIFPlayerView.swift */; };
+		076EF4C426558FD700A17F65 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4C326558FD700A17F65 /* UIImageViewExtension.swift */; };
+		076EF4C62655901100A17F65 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EF4C52655901100A17F65 /* UIImageExtension.swift */; };
 		07DD78962649C81D00B33E9E /* categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD78952649C81D00B33E9E /* categories.swift */; };
 		07DD7898264B21DA00B33E9E /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD7897264B21DA00B33E9E /* ProgressBar.swift */; };
 		1613DE89264C98AC00D9BDE4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613DE88264C98AC00D9BDE4 /* Constants.swift */; };
@@ -32,6 +40,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		076EF4AF265305A700A17F65 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		076EF4B12653085100A17F65 /* Onboarding1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1.swift; sourceTree = "<group>"; };
+		076EF4B32653089100A17F65 /* Onboarding2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2.swift; sourceTree = "<group>"; };
+		076EF4B52653093D00A17F65 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		076EF4B726541FC600A17F65 /* MainOfOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOfOnboarding.swift; sourceTree = "<group>"; };
+		076EF4C126558F5900A17F65 /* GIFPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFPlayerView.swift; sourceTree = "<group>"; };
+		076EF4C326558FD700A17F65 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		076EF4C52655901100A17F65 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		07DD78952649C81D00B33E9E /* categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categories.swift; sourceTree = "<group>"; };
 		07DD7897264B21DA00B33E9E /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		1613DE88264C98AC00D9BDE4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -69,6 +85,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076EF4C026558F2C00A17F65 /* GifExtension */ = {
+			isa = PBXGroup;
+			children = (
+				076EF4C126558F5900A17F65 /* GIFPlayerView.swift */,
+				076EF4C326558FD700A17F65 /* UIImageViewExtension.swift */,
+				076EF4C52655901100A17F65 /* UIImageExtension.swift */,
+			);
+			path = GifExtension;
+			sourceTree = "<group>";
+		};
 		1651A32526446E2E002888DD = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +114,7 @@
 		1651A33026446E2E002888DD /* habture */ = {
 			isa = PBXGroup;
 			children = (
+				076EF4C026558F2C00A17F65 /* GifExtension */,
 				C09BB2CC264C5F1B00D0BDCF /* Components */,
 				C09BB2CA264C5F1B00D0BDCF /* View */,
 				1651A33126446E2E002888DD /* habtureApp.swift */,
@@ -102,6 +129,11 @@
 				16350D32264EB83D00E2AA17 /* Pergunta.swift */,
 				165CCC42264B2D0500FBD39B /* ViewRouter.swift */,
 				1613DE88264C98AC00D9BDE4 /* Constants.swift */,
+				076EF4AF265305A700A17F65 /* SplashScreen.swift */,
+				076EF4B52653093D00A17F65 /* Login.swift */,
+				076EF4B12653085100A17F65 /* Onboarding1.swift */,
+				076EF4B32653089100A17F65 /* Onboarding2.swift */,
+				076EF4B726541FC600A17F65 /* MainOfOnboarding.swift */,
 			);
 			path = habture;
 			sourceTree = "<group>";
@@ -208,21 +240,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076EF4B22653085100A17F65 /* Onboarding1.swift in Sources */,
 				293972FA26558E1B00754C72 /* Trash.swift in Sources */,
 				C09BB2CE264C5F1B00D0BDCF /* ModalCongragulations.swift in Sources */,
 				C0E7A0D3264DFBBB008A070C /* Awards.swift in Sources */,
+				076EF4B826541FC600A17F65 /* MainOfOnboarding.swift in Sources */,
 				16249FF4264ED8F900AEFCB4 /* ButtonStyles.swift in Sources */,
 				C09BB2CF264C5F1B00D0BDCF /* PersonalizedButton.swift in Sources */,
 				C0867623264C6FF200EEE193 /* Game.swift in Sources */,
+				076EF4C426558FD700A17F65 /* UIImageViewExtension.swift in Sources */,
+				076EF4B42653089100A17F65 /* Onboarding2.swift in Sources */,
 				1651A33426446E2E002888DD /* ContentView.swift in Sources */,
 				293972F726558E1B00754C72 /* GenerateTrash.swift in Sources */,
 				293972FB26558E1B00754C72 /* GenerateGarbages.swift in Sources */,
 				1651A33226446E2E002888DD /* habtureApp.swift in Sources */,
 				07DD7898264B21DA00B33E9E /* ProgressBar.swift in Sources */,
 				1613DE89264C98AC00D9BDE4 /* Constants.swift in Sources */,
+				076EF4C226558F5900A17F65 /* GIFPlayerView.swift in Sources */,
 				07DD78962649C81D00B33E9E /* categories.swift in Sources */,
+				076EF4C62655901100A17F65 /* UIImageExtension.swift in Sources */,
+				076EF4B0265305A700A17F65 /* SplashScreen.swift in Sources */,
 				163D092F264DADA0008DBFE2 /* Survey.swift in Sources */,
 				1613DE8B264D9D7A00D9BDE4 /* Question.swift in Sources */,
+				076EF4B62653093D00A17F65 /* Login.swift in Sources */,
 				293972F626558E1B00754C72 /* ModalWrongGarbage.swift in Sources */,
 				293972F826558E1B00754C72 /* GameFront.swift in Sources */,
 				293972F926558E1B00754C72 /* Garbage.swift in Sources */,
@@ -357,7 +397,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"habture/Preview Content\"";
-				DEVELOPMENT_TEAM = 8G4UL7Z7AB;
+				DEVELOPMENT_TEAM = 5U6JS22SU4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = habture/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -379,7 +419,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"habture/Preview Content\"";
-				DEVELOPMENT_TEAM = 8G4UL7Z7AB;
+				DEVELOPMENT_TEAM = 5U6JS22SU4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = habture/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
