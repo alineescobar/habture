@@ -106,6 +106,7 @@ struct Survey: View {
                 ModalQuizEnd(
                     completedCollectDestinoLixo: $completedCollectDestinoLixo,
                     completedCollectTrophy: $completedCollectTrophy,
+                    telaAtual: ViewRouter(),
                     acertos: $qtdAcertos
                 )
             }

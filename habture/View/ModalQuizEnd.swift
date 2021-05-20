@@ -10,6 +10,7 @@ import SwiftUI
 struct ModalQuizEnd: View {
     @Binding var completedCollectDestinoLixo: Bool
     @Binding var completedCollectTrophy: Bool
+    var telaAtual = ViewRouter()
     @Binding var acertos: Int
     @Environment(\.presentationMode) var presentationMode
     @State var openAwardsScreen: Bool = false
@@ -17,10 +18,6 @@ struct ModalQuizEnd: View {
     var body: some View {
         ZStack {
             ZStack{
-                HStack{
-                    Color.white
-                }.ignoresSafeArea()
-                .background(Color.clear)
                 VStack{
                     PersonalizedModal(
                         bgColor: Color("Yellow"),
@@ -46,14 +43,16 @@ struct ModalQuizEnd: View {
                         if (acertos == 4){
                             completedCollectTrophy = true
                         }
+                        telaAtual.currentPage = .conquistas
                         openAwardsScreen.toggle()
                     }
-                    .buttonStyle(CommonUseButton(text: "Coletar troféu", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
+                    .buttonStyle(CommonUseButton(text: completedCollectTrophy ? "Coletar troféu" : "Ver suas conquistas", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
                     .padding(EdgeInsets(top: 34, leading: 40, bottom: 0, trailing: 40))
                     .fullScreenCover(isPresented: $openAwardsScreen){
-                        Awards(
-                            completedCollectDestinoLixo: $completedCollectDestinoLixo,
-                            completedCollectTrophy: $completedCollectTrophy
+                        ContentView(
+                            viewRouter: telaAtual,
+                            completedCollectDestinoLixo: completedCollectDestinoLixo,
+                            completedCollectTrophy: completedCollectTrophy
                         )
                     }
                 }
