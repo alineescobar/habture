@@ -33,6 +33,7 @@ struct Onboarding2: View {
                     .frame(width: 280, height: 321, alignment:.center)
                     .padding(.bottom, 20)
                 Button(""){
+                    UserDefaults.standard.set(true, forKey: "sawOnBoarding")
                     abreContent.toggle()
                 }.buttonStyle(CommonUseButton(text: "Começar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
                 .padding(.horizontal, 20)

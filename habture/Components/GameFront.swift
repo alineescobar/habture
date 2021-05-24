@@ -47,6 +47,7 @@ struct GameFront: View {
         if countAll == 16 {
             self.completedCollect = true
             if !completedCollectDestinoLixo {
+                UserDefaults.standard.set(true, forKey: "StorageCompletedCollectDestinoLixo")
                 self.completedCollectDestinoLixo = true
             }
         }

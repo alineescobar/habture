@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     @StateObject var viewRouter: ViewRouter
-    @State var completedCollectDestinoLixo: Bool = false
-    @State var completedCollectTrophy: Bool = false
+//    @State var completedCollectDestinoLixo: Bool = false
+//    @State var completedCollectTrophy: Bool = false
+    
+    @AppStorage("StorageCompletedCollectDestinoLixo") var completedCollectDestinoLixo: Bool = false
+    @AppStorage("StorageCompletedCollectTrophy") var completedCollectTrophy: Bool = false
     
     var body: some View{
         GeometryReader { geometry in

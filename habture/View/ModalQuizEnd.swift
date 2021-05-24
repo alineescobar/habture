@@ -41,6 +41,7 @@ struct ModalQuizEnd: View {
                     
                     Button(""){
                         if (acertos == 4){
+                            UserDefaults.standard.set(true, forKey: "StorageCompletedCollectTrophy")
                             completedCollectTrophy = true
                         }
                         telaAtual.currentPage = .conquistas

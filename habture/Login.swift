@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Login: View {
     @State var openOnBoarding: Bool = false
+    @AppStorage("sawOnBoarding") var sawOnBoarding: Bool = false
+
     var body: some View {
         ZStack{
             VStack{
@@ -36,12 +38,16 @@ struct Login: View {
                     .frame(height:160)
                 
                 Button(""){
-                    openOnBoarding.toggle()
+                        openOnBoarding.toggle()
                 }
                 .buttonStyle(CommonUseButton(text: "Jogar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
                 .padding(.horizontal, 20)
                 .fullScreenCover(isPresented: $openOnBoarding){
-                    MainOfOnboarding()
+                    if sawOnBoarding {
+                        ContentView(viewRouter: ViewRouter())
+                    } else {
+                        MainOfOnboarding()
+                    }
                 }
                 .padding(.horizontal, 40)
                 

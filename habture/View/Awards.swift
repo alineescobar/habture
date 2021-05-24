@@ -47,26 +47,17 @@ struct Awards: View {
                                 )
                                 .offset(y: -90.0)
                             
-                            if completedCollectDestinoLixo && completedCollectTrophy {
+                            if completedCollectDestinoLixo {
                                 HStack(alignment: .bottom) {
                                     Image("plastico")
                                     Spacer()
                                     Image("vidro")
                                     Spacer()
-                                    Image("premioDestinoLixo")
-                                    Spacer()
-                                    Image("organico")
-                                    Spacer()
-                                    Image("metal")
-                                }
-                                .padding(.horizontal,28)
-                            } else if completedCollectDestinoLixo {
-                                HStack(alignment: .bottom) {
-                                    Image("plastico")
-                                    Spacer()
-                                    Image("vidro")
-                                    Spacer()
-                                    Image("premioGenerico")
+                                    if completedCollectTrophy {
+                                        Image("premioDestinoLixo")
+                                    } else {
+                                        Image("premioGenerico")
+                                    }
                                     Spacer()
                                     Image("organico")
                                     Spacer()
