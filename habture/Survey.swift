@@ -99,7 +99,8 @@ struct Survey: View {
                         openModalEndQuiz.toggle()
                     }
                 }
-            }.buttonStyle(CommonUseButton(text: progess == 180 ? "Finalizar" : "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
+            }
+            .buttonStyle(CommonUseButton(text: progess == 180 ? "Finalizar" : "Continuar", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))
             .frame(maxWidth: 300)
             .padding(.top, 64)
             .fullScreenCover(isPresented: $openModalEndQuiz){

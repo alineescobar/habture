@@ -16,9 +16,11 @@ struct GameFront: View {
     @State var countOrganic: Int = 0
     @State var countAll: Int = 0
     @Binding var completedCollectDestinoLixo: Bool
-
-    init(completedCollectDestinoLixo: Binding<Bool>) {
+    @Binding var completedCollect: Bool
+    
+    init(completedCollectDestinoLixo: Binding<Bool>, completedCollect: Binding<Bool>) {
         self._completedCollectDestinoLixo = completedCollectDestinoLixo
+        self._completedCollect = completedCollect
     }
     
     var body: some View {
@@ -43,7 +45,10 @@ struct GameFront: View {
     
     func verifyCountAll(){
         if countAll == 16 {
-            self.completedCollectDestinoLixo = true
+            self.completedCollect = true
+            if !completedCollectDestinoLixo {
+                self.completedCollectDestinoLixo = true
+            }
         }
     }
     

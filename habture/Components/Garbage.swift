@@ -11,13 +11,11 @@ struct Garbage: View {
     let x: CGFloat
     let y: CGFloat
     let type: String
-    @State var typeText: String = "lala"
     
     init(x:CGFloat, y:CGFloat, type:String) {
         self.x = x
         self.y = y
         self.type = type
-        
     }
     
     var body: some View {
@@ -28,22 +26,17 @@ struct Garbage: View {
                 .frame(width: 70, height: 100)
                 .position(x: self.x, y: self.y)
         }
-        
     }
     
     func identify(type: String) -> String{
         switch type {
         case "plastic":
-            self.typeText = "Plástico"
             return "plastic"
         case "glass":
-            self.typeText = "Vidro"
             return "glass"
         case "metal":
-            self.typeText = "Metal"
             return "metal"
         case "organic":
-            self.typeText = "Orgânico"
             return "organic"
         default:
             print("error")

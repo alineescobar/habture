@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ModalPlastico: View {
+    @Environment(\.presentationMode) var presentationMode
     @Binding var completedCollectDestinoLixo: Bool
     @Binding var completedCollectTrophy: Bool
-    @Environment(\.presentationMode) var presentationMode
+    @Binding var completedCollect: Bool
     @State var openModalMetal: Bool = false
-    
+
     var body: some View {
         ZStack {
             Image("bgCenarioPraiaOpaco")
@@ -43,6 +44,7 @@ struct ModalPlastico: View {
                 )
                 
                 Button(""){
+                    completedCollect = false
                     openModalMetal.toggle()
                 }
                 .buttonStyle(CommonUseButton(text: "Coletar prêmio", bgColor: Color("Purple2"), shadowColor: Color("Purple3")))

@@ -12,9 +12,9 @@ struct Game: View {
     @State var openModalPlastico: Bool = false
     @Binding var completedCollectDestinoLixo: Bool
     @Binding var completedCollectTrophy: Bool
+    @State var completedCollect: Bool = false
     @EnvironmentObject var a: Reloud
 
-    
     var body: some View {
         ZStack {
             if openModalPlastico {
@@ -24,9 +24,9 @@ struct Game: View {
                 Text(a.a)
                     .lineLimit(nil)
             }
-            GameFront(completedCollectDestinoLixo: $completedCollectDestinoLixo)
+            GameFront(completedCollectDestinoLixo: $completedCollectDestinoLixo, completedCollect: $completedCollect)
                 .zIndex(30)
-                .onChange(of: completedCollectDestinoLixo, perform: { value in
+                .onChange(of: completedCollect, perform: { value in
                     if value {
                         openModalPlastico.toggle()
                     }
@@ -37,7 +37,6 @@ struct Game: View {
                     .scaledToFill()
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     .ignoresSafeArea(.all)
-                
                 VStack {
                     HStack {
                         Button(action: {
@@ -63,10 +62,12 @@ struct Game: View {
                                 .foregroundColor(Color("Purple2"))
                         }).isHidden(true)
                     }
-                }.fullScreenCover(isPresented: $openModalPlastico){
+                }
+                .fullScreenCover(isPresented: $openModalPlastico){
                     ModalPlastico(
                         completedCollectDestinoLixo: $completedCollectDestinoLixo,
-                        completedCollectTrophy: $completedCollectTrophy
+                        completedCollectTrophy: $completedCollectTrophy,
+                        completedCollect: $completedCollect
                     )
                 }
                 .padding(.horizontal)
